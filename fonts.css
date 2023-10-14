@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Rostov";
+  src: url("./fonts/Rostov.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
