@@ -837,7 +837,7 @@
     height: 0;
   }
   to {
-    height: 460px;
+    height: 610px;
   }
 }
 
@@ -848,7 +848,7 @@
 
 @keyframes close_work {
   from {
-    height: 460px;
+    height: 610px;
     display: flex;
   }
   to {
