@@ -5,29 +5,36 @@
   <title>Montera</title>
   <link rel="stylesheet" href="./styles.css"/>
   <link rel="stylesheet" href="./fonts.css"/>
-  <script type="text/javascript" src="./script.js"></script>
 </head>
 <body>
 <header class="header">
   <img src="./image/icon.svg" alt="icon" class="header_icon">
   <ul class="navigate">
     <li class="navigate_button">
-      <label for="input_work" class="navigate_label">Услуги</label>
-      <input id="input_work" type="checkbox" class="input_checkbox">
+      <p class="navigate_link" onclick="openMenu(this)">Услуги</p>
       <ul class="navigate_list">
-        <li class="navigate_item"><a href="#work_1" class="list_link">Земляные работы</a></li>
-        <li class="navigate_item"><a href="#work_2" class="list_link">Бетонные работы</a></li>
-        <li class="navigate_item"><a href="#work_3" class="list_link">Кровельные работы</a></li>
-        <li class="navigate_item"><a href="#work_4" class="list_link">Отделочные работы</a></li>
-        <li class="navigate_item"><a href="#work_5" class="list_link">Благоустройство, озеленение</a></li>
-        <li class="navigate_item"><a href="#work_6" class="list_link">Устройство оснований фундаментов зданий и сооружений</a>
+        <li class="navigate_item"><a href="#work_1" class="list_link" onclick="openWorkType(this)">Земляные работы</a>
+        </li>
+        <li class="navigate_item"><a href="#work_2" class="list_link" onclick="openWorkType(this)">Бетонные работы</a>
+        </li>
+        <li class="navigate_item"><a href="#work_3" class="list_link" onclick="openWorkType(this)">Каменные работы </a>
+        </li>
+        <li class="navigate_item"><a href="#work_4" class="list_link" onclick="openWorkType(this)">Монтаж
+          конструкций</a></li>
+        <li class="navigate_item"><a href="#work_5" class="list_link" onclick="openWorkType(this)">Кровельные работы</a>
+        </li>
+        <li class="navigate_item"><a href="#work_6" class="list_link" onclick="openWorkType(this)">Отделочные работы</a>
+        </li>
+        <li class="navigate_item"><a href="#work_7" class="list_link" onclick="openWorkType(this)">Благоустройство,
+          озеленение</a></li>
+        <li class="navigate_item"><a href="#work_8" class="list_link" onclick="openWorkType(this)">Устройство оснований
+          фундаментов зданий и сооружений</a>
         </li>
       </ul>
     </li>
     <li class="navigate_button"><a href="#portfolio" class="navigate_link">Портфолио</a></li>
     <li class="navigate_button">
-      <label for="input_company" class="navigate_label">О компании</label>
-      <input id="input_company" type="checkbox" class="input_checkbox">
+      <p class="navigate_link" onclick="openMenu(this)">О компании</p>
       <ul class="navigate_list">
         <li class="navigate_item"><a href="#page_1" class="list_link">О нас</a></li>
         <li class="navigate_item"><a href="#page_2" class="list_link">Наши преимущества</a></li>
@@ -61,34 +68,28 @@
         <div class="about_history">
           <div class="about_wrapper_text">
             <p class="about_text">Наша компания была организована 16 февраля 2022 года. Тогда перед нами стояла сложная
-              задача зарекомендовать
-              себя на рынке строительных услуг, как надежного
-              партнера и добросовестного подрядчика. Мы поставили перед собой цель – создание
-              качественных и надежных объектов, которые будут служить на благо наших клиентов и
-              общества в целом.
+              задача зарекомендовать себя на рынке строительных услуг, как надежного партнера и добросовестного
+              подрядчика. Мы поставили перед собой цель – создание качественных и надежных объектов, которые будут
+              служить на благо наших клиентов и
             </p>
             <p class="about_text">На данный момент у нас уже выстроены долгосрочные отношения с рядом крупных
-              организаций по городу Гродно и Гродненской области. Мы понимаем, что каждый проект
-              уникален и требует индивидуального подхода. Поэтому мы тщательно изучаем
-              потребности и цели каждого клиента, чтобы предложить оптимальное решение, которое
-              будет соответствовать их ожиданиям.
+              организаций по городу Гродно и Гродненской области. Мы понимаем, что каждый проект уникален и требует
+              индивидуального подхода. Поэтому мы тщательно изучаем потребности и цели каждого клиента, чтобы предложить
+              оптимальное решение, которое будет соответствовать их ожиданиям.
             </p>
-            <p class="about_text">Также мы придерживаемся высоких стандартов качества и безопасности на всех
-              этапах строительства. Мы работаем с проверенными поставщиками материалов
-              и
-              используем современное оборудование, чтобы гарантировать надежность
-              и долговечность
-              наших объектов.
+            <p class="about_text">Также мы придерживаемся высоких стандартов качества и безопасности на всех этапах
+              строительства. Мы работаем с проверенными поставщиками материалов и используем современное оборудование,
+              чтобы гарантировать надежность и долговечность наших объектов.
             </p>
-            <p class="about_text">Мы уже гордимся нашими достижениями и успешно реализованными
-              объектами. Однако, мы не останавливаемся на достигнутом и всегда ищем новые
-              возможности для роста и развития. Строим будущее вместе с нашими клиентами и всеми,
-              кто разделяет нашу идею создания лучшей среды для жизни и работы.
-              Если вы ищите надежного и профессионального партнера для реализации своих
-              строительных проектов, обратитесь к нам. Мы с удовольствием поможем Вам воплотить
-              ваши идеи в реальность и создать объект, которым будете гордиться.</p>
+            <p class="about_text">Мы уже гордимся нашими достижениями и успешно реализованными объектами. Однако, мы не
+              останавливаемся на достигнутом и всегда ищем новые возможности для роста и развития. Строим будущее вместе
+              с нашими клиентами и всеми, кто разделяет нашу идею создания лучшей среды для жизни и работы. Если вы
+              ищите надежного и профессионального партнера для реализации своих строительных проектов, обратитесь к нам.
+              Мы с удовольствием поможем Вам воплотить ваши идеи в реальность и создать объект, которым будете
+              гордиться.
+            </p>
           </div>
-          <button class="navigate_button about_button">показать еще</button>
+          <button class="navigate_button about_button" onclick="closeAboutCompany(this, true)">показать еще</button>
         </div>
         <div class="about_wrapper_img">
         </div>
@@ -168,7 +169,7 @@
   <div class="section">
     <h2 id="page_3" class="subtitle">Как мы работаем</h2>
     <div class="our_work_content">
-      <div class="our_work_item" onmouseover="chooseImg(this)">
+      <div class="our_work_item">
         <p class="our_work_text">Подготовка и заключение договора.</p>
         <div class="our_work_container">
           <div class="our_work_wrapper_icon">
@@ -220,59 +221,88 @@
     <h2 id="page_4" class="subtitle">Документация</h2>
     <div class="documents">
       <div class="documents_chapter">
-        <input id="diploma" type="checkbox" class="input_checkbox">
+        <input id="diploma" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="diploma" class="documents_chapter_name">
           Аттестат соответствия
           <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
           <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
         </label>
-        <div class="documents_library">
-          <img src="./image/photo/diploma/photo_1.jpg" alt="" class="documents_library_photo">
-          <img src="./image/photo/diploma/photo_1-2.jpg" alt="" class="documents_library_photo">
-          <img src="./image/photo/diploma/photo_2.jpg" alt="" class="documents_library_photo">
+        <div class="wrapper_library">
+          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
+          <div class="documents_library">
+            <div class="documents_images">
+              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_2.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_1-2.jpg" alt="diploma" class="documents_library_photo">
+              <img src="./image/photo/diploma/photo_2.jpg" alt="diploma" class="documents_library_photo">
+            </div>
+          </div>
+          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
         </div>
       </div>
       <div id="page_5" class="documents_chapter">
-        <input id="certificate" type="checkbox" class="input_checkbox">
+        <input id="certificate" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="certificate" class="documents_chapter_name">
           Сертификаты
           <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
           <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
         </label>
-        <div class="documents_library">
-          <img src="./image/photo/certificate/photo_1.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/certificate/photo_2.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/certificate/photo_3.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/certificate/photo_4.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/certificate/photo_5.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/certificate/photo_6.jpg" alt="photo" class="documents_library_photo">
+        <div class="wrapper_library">
+          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
+          <div class="documents_library">
+            <div class="documents_images">
+              <img src="./image/photo/certificate/photo_1.jpg" alt="certificate" class="documents_library_photo">
+              <img src="./image/photo/certificate/photo_2.jpg" alt="certificate" class="documents_library_photo">
+              <img src="./image/photo/certificate/photo_3.jpg" alt="certificate" class="documents_library_photo">
+              <img src="./image/photo/certificate/photo_4.jpg" alt="certificate" class="documents_library_photo">
+              <img src="./image/photo/certificate/photo_5.jpg" alt="certificate" class="documents_library_photo">
+              <img src="./image/photo/certificate/photo_6.jpg" alt="certificate" class="documents_library_photo">
+            </div>
+          </div>
+          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
         </div>
       </div>
       <div id="page_6" class="documents_chapter">
-        <input id="politic" type="checkbox" class="input_checkbox">
+        <input id="politic" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="politic" class="documents_chapter_name">
           Политика в области качества
           <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
           <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
         </label>
-        <div class="documents_library">
-          <img src="./image/photo/politic/photo_1.jpg" alt="photo" class="documents_library_photo">
+        <div class="wrapper_library">
+          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
+          <div class="documents_library">
+            <div class="documents_images">
+              <img src="./image/photo/politic/photo_1.jpg" alt="politic" class="documents_library_photo">
+            </div>
+          </div>
+          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
         </div>
       </div>
       <div id="page_7" class="documents_chapter">
-        <input id="technic" type="checkbox" class="input_checkbox">
+        <input id="technic" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="technic" class="documents_chapter_name">
           Техническая компетенция
           <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
           <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
         </label>
-        <div class="documents_library">
-          <img src="./image/photo/technic/photo_1.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/technic/photo_2.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/technic/photo_3.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/technic/photo_4.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/technic/photo_5.jpg" alt="photo" class="documents_library_photo">
-          <img src="./image/photo/technic/photo_6.jpg" alt="photo" class="documents_library_photo">
+        <div class="wrapper_library">
+          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
+          <div class="documents_library">
+            <div class="documents_images">
+              <img src="./image/photo/technic/photo_1.jpg" alt="technic" class="documents_library_photo">
+              <img src="./image/photo/technic/photo_2.jpg" alt="technic" class="documents_library_photo">
+              <img src="./image/photo/technic/photo_3.jpg" alt="technic" class="documents_library_photo">
+              <img src="./image/photo/technic/photo_4.jpg" alt="technic" class="documents_library_photo">
+              <img src="./image/photo/technic/photo_5.jpg" alt="technic" class="documents_library_photo">
+              <img src="./image/photo/technic/photo_6.jpg" alt="technic" class="documents_library_photo">
+            </div>
+          </div>
+          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
         </div>
       </div>
     </div>
@@ -281,25 +311,81 @@
   <div class="section">
     <h2 id="page_8" class="subtitle">Отзывы</h2>
     <div class="review">
-      <div class="review_content">
-        <h3 class="review_title">Имя/Компания клиента </h3>
-        <p class="review_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias assumenda autem beatae
-          dolor eius enim esse fugiat incidunt inventore iste laudantium magni molestiae natus necessitatibus non, omnis
-          quam qui recusandae repellendus rerum, saepe sit vitae voluptas voluptatem! Dignissimos ducimus et eum
-          explicabo ipsa natus nulla porro qui recusandae reiciendis sint vel velit veritatis vero, voluptates? Ab
-          adipisci eum, fuga itaque minus, necessitatibus odio quo reiciendis, sed sint soluta vel veniam! Assumenda
-          commodi consectetur corporis cum dolore dolores enim error esse explicabo facilis fuga, impedit ipsam
-          laboriosam libero magnam nulla perspiciatis possimus quod recusandae sequi tempora temporibus ullam unde
-          velit.</p>
-        <button class="navigate_button review_button">Открыть фото</button>
+      <div class="wrapper_review">
+        <div id="1" class="review_content review_visible">
+          <h3 class="review_title">Конте Инвест</h3>
+          <div class="review_text_wrapper">
+            <p class="review_text">Общество с ограниченной ответственностью «Монтера» является нашим партнером в области
+              ремонтно-строительных и монтажных работ на наших
+              построенных объектах с момента начала своей деятельности.</p>
+            <p class="review_text">За это время ООО «Монтера» показала свою способность с полной
+              ответственностью подходить к поставленным задачам, выполнять работы
+              качественно и в срок. Отличительной чертой работы ООО «Монтера»
+              являются честность, надежность и исполнительность.</p>
+            <p class="review_text">Рекомендуем ООО «Монтера» как стабильногя и делового партнера.</p>
+          </div>
+          <img src="./image/photo/review/review_1.jpg" alt="Конте Инвест" class="review_photo">
+          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+        </div>
+
+        <div id="2" class="review_content review_hidden">
+          <h3 class="review_title">Биоком</h3>
+          <div class="review_text_wrapper">
+            <p class="review_text"> Настоящим письмом ООО «Биоком» хочет выразить благодарность компании ООО «Монтера»,
+              являющейся нашем партнером в области строительства и текущего ремонта.</p>
+            <p class="review_text">Результаты работ показали, что компания отличается четким выполнением условий
+              договора, высоким профессионализмом сотрудников и оперативностью выполнения работ. Все работы успешно
+              выполнены.</p>
+            <p class="review_text">Как заказчик, мы удовлетворены качеством проведения и результатами работ, и планируем
+              продолжить сотрудничество на взаимовыгодных условиях.</p>
+          </div>
+          <img src="./image/photo/review/review_2.jpg" alt="Биоком" class="review_photo">
+          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+        </div>
+
+        <div id="3" class="review_content review_hidden">
+          <h3 class="review_title">Shtang</h3>
+          <div class="review_text_wrapper">
+            <p class="review_text">Общество с ограниченной ответственностью «Монтера» в рамках договора строительного
+              субподряда выполняло работы на объекте: «Реконструкция очистных сооружений канализации города Гродно, 2-ая
+              очередь строительства» по адресу: г. Гродно, ул. Биологическая, д.5»</p>
+            <p class="review_text">Работы были выполнены в соответствии с действующими строительными нормами и
+              правилами, согласно техническому заданию и условиям договора, с надлежащим качеством и в установленный
+              срок. При этом, в ходе производства работ максимально учитывались пожелания Заказчика, использовались
+              современные строительные материалы и прогрессивные технологии.</p>
+            <p class="review_text">За время проведения работ вышеупомянутая организация проявила себя как
+              профессиональный надежный партнер с наличием квалифицированных кадров, решающих оперативно и качественно
+              поставленные задачи.</p>
+          </div>
+          <img src="./image/photo/review/review_4.jpg" alt="Shtang" class="review_photo">
+          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+        </div>
+
+        <div id="4" class="review_content review_hidden">
+          <h3 class="review_title">ВиннерАгро</h3>
+          <div class="review_text_wrapper">
+            <p class="review_text">Настоящим рекомендательным письмом хотим отметить успешный опыт сотрудничества ООО
+              ВиннерАгро» с компанией ООО «Монтера», выполняющей строительные работы на территории нашего объекта
+              строительства «Возведение административно-хозяйственного здания с устройством мини-котельной на природном
+              газе с использованием незавершенного законсервированного капитального строения по ул. Гаражная, 15/3 в г.
+              Гродно» на сегодняшний день.</p>
+            <p class="review_text"> За время сотрудничества компания показала высокий профессионализм и качество работ.
+              Все работы, выполняемые ООО «Монтера» велись организованно и в намеченные сроки.</p>
+            <p class="review_text">Руководство ООО «ВиннерАгро» имеет все основания рекомендовать ООО «Монтера» как
+              надежного партнера в области ведения строительных работ.
+            </p>
+          </div>
+          <img src="./image/photo/review/review_3.jpg" alt="ВиннерАгро" class="review_photo">
+          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+        </div>
       </div>
       <div class="review_wrapper_pages">
         <img src="./image/”.svg" alt="icon" class="review_icon">
         <div class="review_pages">
-          <span class="review_page">1</span>
-          <span class="review_page">2</span>
-          <span class="review_page">3</span>
-          <span class="review_page">4</span>
+          <span class="review_page" onclick="openReview(event)">1</span>
+          <span class="review_page" onclick="openReview(event)">2</span>
+          <span class="review_page" onclick="openReview(event)">3</span>
+          <span class="review_page" onclick="openReview(event)">4</span>
         </div>
       </div>
     </div>
@@ -309,242 +395,254 @@
 <div class="services">
   <h2 class="title">Услуги</h2>
   <div class="services_types">
-    <div id="work_1" class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img1.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Земляные работы</p>
+    <div class="services_column">
+      <div id="work_1" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img1.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Земляные работы</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
+      <div id="work_2" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img5.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Бетонные работы</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <div id="work_2" class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img5.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Бетонные работы</p>
-      </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img8.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Каменные работы</p>
-      </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img2.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Монтаж конструкций</p>
-      </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
+      <div id="work_3" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img8.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Каменные работы</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <div id="work_3" class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img6.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Кровельные работы</p>
+    <div class="services_column">
+      <div id="work_4" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img2.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Монтаж конструкций</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
+      <div id="work_5" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img6.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Кровельные работы</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
+      </div>
+      <div id="work_6" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img4.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Отделочные работы</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <div id="work_4" class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img4.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Отделочные работы</p>
+    <div class="services_column">
+      <div id="work_7" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img3.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Благоустройство, озеленение</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="work_5"class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img3.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Благоустройство, озеленение</p>
-      </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="services_type">
-      <div class="services_type_header">
-        <img src="./image/img7.svg" alt="icon" class="services_type_icon">
-        <p class="services_type_name">Устройство инженерных сетей</p>
-      </div>
-      <div class="services_type_content">
-        <ul class="services_type_ul">Земляные работы
-          <li class="services_type_li">разработка выемок и котлованов;</li>
-          <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li"> вертикальная планировка;</li>
-        </ul>
-        <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
-          <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
-          <li class="services_type_li">вертикальная планировка;</li>
-        </ul>
+      <div id="work_8" class="services_type" onclick="hoverWork(this)">
+        <div class="services_type_header">
+          <img src="./image/img7.svg" alt="icon" class="services_type_icon">
+          <p class="services_type_name">Устройство инженерных сетей</p>
+        </div>
+        <div class="services_type_content is_close">
+          <ul class="services_type_ul">Земляные работы
+            <li class="services_type_li">разработка выемок и котлованов;</li>
+            <li class="services_type_li">разработка насыпи и обратной зысыпки;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li"> вертикальная планировка;</li>
+          </ul>
+          <ul class="services_type_ul">Устройство оснований фундаментов зданий и сооружений
+            <li class="services_type_li">водопонижение, организация поверхностного стока, дренаж;</li>
+            <li class="services_type_li">вертикальная планировка;</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 <div class="portfolio">
   <h2 id="portfolio" class="title">Портфолио</h2>
   <div>
     <div class="portfolio_gallery">
-      <div class="project">
-        <img src="image/photo/project/project_6.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Проект 1</p>
-        <p class="project_inform">Информация о проекте. Информация о проекте. Информация о проекте. Информация о
-          проекте.Информация о проекте.</p>
+      <div class="project hidden_project">
+        <img src="image/photo/project/project_9.jpg" alt="photo" class="project_photo">
+        <p class="project_name">Здание многофункциональное</p>
+        <p class="project_inform">Город Гродно, улица Фомичева, 2.</p>
+      </div>
+      <div class="project hidden_project">
+        <img src="image/photo/project/project_11.jpg" alt="photo" class="project_photo">
+        <p class="project_name">Группы жилых домов</p>
+        <p class="project_inform">Микрорайон Барановичи 9, город Гродно.</p>
+      </div>
+      <div class="project hidden_project">
+        <img src="image/photo/project/project_10.jpg" alt="photo" class="project_photo">
+        <p class="project_name">Здание многофункциональное</p>
+        <p class="project_inform">Проспект Я.Купалы 72 Б, город Гродно.</p>
       </div>
 
-      <div class="project">
+      <div class="project hidden_project">
+        <img src="image/photo/project/project_8.jpg" alt="photo" class="project_photo">
+        <p class="project_name">Модернизация здания</p>
+        <p class="project_inform">Город Волковыск, улица Матросава.</p>
+      </div>
+      <div class="project hidden_project">
         <img src="image/photo/project/project_2.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Проект 2</p>
-        <p class="project_inform">Информация о проекте. Информация о проекте. Информация о проекте. Информация о
-          проекте.Информация о проекте.</p>
+        <p class="project_name">Реконструкция жилого дома</p>
+        <p class="project_inform">Улица Садовая в а/городке Глядовичи.</p>
+      </div>
+      <div class="project hidden_project">
+        <img src="image/photo/project/project_7.jpg" alt="photo" class="project_photo">
+        <p class="project_name">Возведение здания</p>
+        <p class="project_inform">Улица Гаражная 15/3.</p>
+      </div>
+      <div class="project hidden_project">
+        <img src="image/photo/project/project_4.jpg" alt="photo" class="project_photo">
+        <p class="project_name">Склады готовой продукции</p>
+        <p class="project_inform">Территория СЭЗ. “Гродно-Инвест” по улице Аульская в г. Гродно.</p>
       </div>
 
-      <div class="project">
-        <img src="image/photo/project/project_3.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Проект 3</p>
-        <p class="project_inform">Информация о проекте. Информация о проекте. Информация о проекте. Информация о
-          проекте.Информация о проекте.</p>
-      </div>
-      <div class="project">
-        <img src="image/photo/project/project_4.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Проект 3</p>
-        <p class="project_inform">Информация о проекте. Информация о проекте. Информация о проекте. Информация о
-          проекте.Информация о проекте.</p>
-      </div>
+
     </div>
     <div class="portfolio_gallery_buttons">
-      <span class="portfolio_gallery_button">Назад</span>
+      <span id="btn_minus" class="portfolio_gallery_button active">< Назад</span>
       <span class="space"></span>
-      <span class="portfolio_gallery_button">Вперед</span>
+      <span id="btn_plus" class="portfolio_gallery_button active">Вперед ></span>
     </div>
   </div>
 </div>
@@ -594,5 +692,14 @@
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
+<div class="increase_wrapper_library" onclick="closeWrapper(event)">
+  <img src="./image/leftArrow.svg" alt="left" class="left arrow_library">
+  <div class="increase_documents_library">
+    <div class="increase_documents_images">
+    </div>
+  </div>
+  <img src="./image/rightArrow.svg" alt="right" class="right arrow_library">
+</div>
+<script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
