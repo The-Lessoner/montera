@@ -171,7 +171,7 @@ const increaseImg = (element, portfolio) => {
   const wrapper = document.querySelector(".increase_wrapper_library");
   wrapper.className = "increase_wrapper_library open_slider";
   wrapper.style.display = "flex";
-
+  document.body.style.overflow = "hidden";
   for (const key in wrapper.children) {
     if (wrapper.children[key].alt === "left") {
       leftArrow = wrapper.children[key];
@@ -227,6 +227,7 @@ const checkIncreaseArrow = (element) => {
 const closeWrapper = (event) => {
   if (event.target.className === "increase_wrapper_library open_slider") {
     event.target.className = "increase_wrapper_library close_slider";
+    document.body.style.overflow = "visible";
   }
 };
 
@@ -341,27 +342,27 @@ const prevImagePortfolio = () => {
   addImg(clickElement, true);
 };
 
-let counterHeader;
-let marker = false;
-const head = document.querySelector(".header");
-
-const header = () => {
-  if (!marker && counterHeader > window.pageYOffset) {
-    marker = true;
-    head.style.position = "absolute";
-    head.style.top = window.pageYOffset - head.offsetHeight + "px";
-  }
-  if(window.pageYOffset <= head.offsetTop){
-    head.style.position= "fixed";
-    head.style.top = "0";
-    marker = true;
-  }
-  if (marker && counterHeader <= window.pageYOffset) {
-    marker = false
-    head.style.position = "absolute";
-    head.style.top = window.pageYOffset+"px";
-  }
-  counterHeader = window.pageYOffset;
-};
-
-window.addEventListener("scroll", header);
+// let counterHeader;
+// let marker = false;
+// const head = document.querySelector(".header");
+//
+// const header = () => {
+//   if (!marker && counterHeader > window.pageYOffset) {
+//     marker = true;
+//     head.style.position = "absolute";
+//     head.style.top = window.pageYOffset - head.offsetHeight + "px";
+//   }
+//   if(window.pageYOffset <= head.offsetTop){
+//     head.style.position= "fixed";
+//     head.style.top = "0";
+//     marker = true;
+//   }
+//   if (marker && counterHeader <= window.pageYOffset) {
+//     marker = false
+//     head.style.position = "absolute";
+//     head.style.top = window.pageYOffset+"px";
+//   }
+//   counterHeader = window.pageYOffset;
+// };
+//
+// window.addEventListener("scroll", header);

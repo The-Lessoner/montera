@@ -6,6 +6,7 @@
 
 .header {
   display: flex;
+  position: fixed;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +15,7 @@
   padding-inline: 50px;
   background: #FFFFFF;
   box-shadow: 0 4px 10px 0 #6100001A;
-  z-index: 20;
+  z-index: 5;
 }
 
 .header_icon {
@@ -59,7 +60,7 @@
     color: black;
   }
   to {
-    background: #4F4F4F;
+    background: #000000;
     color: #FFFFFF;
   }
 }
@@ -74,7 +75,7 @@
   height: 100%;
   padding: 10px;
   text-align: center;
-  color: #000000;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -361,7 +362,7 @@
 .advantages_item {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 40px;
   box-shadow: 0 4px 10px 0 #6100001A;
   border-radius: 3px;
 }
@@ -399,8 +400,12 @@
 }
 
 .advantages_text {
+  margin-right: 10px;
   align-self: center;
   padding: 10px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .our_work_content {
@@ -545,6 +550,7 @@
   left: 0;
   background: rgba(3, 3, 3, .4);
   cursor: zoom-out;
+  z-index: 6;
 }
 
 .open_slider {
@@ -599,7 +605,7 @@
 .documents_images {
   display: flex;
   gap: 30px;
-  padding-block: 10px;
+  padding: 10px;
   width: 100%;
   transition: all ease 1s;
 }
@@ -613,7 +619,7 @@
 .increase_documents_library_photo {
   cursor: auto;
   height: inherit;
-  z-index: 4;
+  box-shadow: 0px 4px 10px 0px #6100004D;
 }
 
 #diploma:checked ~ .documents_chapter_name > .visible {
@@ -824,7 +830,7 @@
 
 .services_type_name {
   width: 100%;
-  text-align: center;
+  margin-inline: 30px;
   align-self: center;
   font-size: 24px;
   font-family: "Rostov", sans-serif;
@@ -953,38 +959,39 @@
   margin-top: 85px;
 }
 
-#btn_minus {
-  padding-right: 5px;
-}
+/*#btn_minus {*/
+/*  padding-right: 5px;*/
+/*}*/
 
-#btn_plus {
-  padding-left: 5px;
-}
+/*#btn_plus {*/
+/*  padding-left: 5px;*/
+/*}*/
 
 .portfolio_gallery_button {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 95px;
   padding-block: 5px;
   text-align: center;
   font-size: 16px;
   font-family: "Inter", sans-serif;
   cursor: pointer;
+  border: 1px solid #BDBDBD;
+  border-radius: 3px;
 }
 
 .active {
-  border: 1px solid #4F4F4F;
   color: #000000;
 }
 
 .disable {
-  border: 1px solid #BDBDBD;
   color: #BDBDBD;
 }
 
 .space {
   width: 16px;
   margin-inline: 22px;
-  border: 1px solid #BDBDBD;
+  border: 1px solid #000000;
   height: 1px;
 }
 
@@ -1026,6 +1033,7 @@
 }
 
 .contact_inform_text {
+  margin-left: 10px;
   color: #FFFFFF;
   font-size: 16px;
   font-family: "Inter", sans-serif;
@@ -1045,14 +1053,16 @@
 
 .messenger {
   position: fixed;
-  bottom: 50%;
-  transform: translateY(50%);
-  right: 50px;
   display: flex;
+  gap: 30px;
+  bottom: 50%;
+  transform: translateY(75%);
+  right: 50px;
   flex-direction: column;
+  z-index: 3;
 }
 
 .messenger_icon {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
