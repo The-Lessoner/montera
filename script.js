@@ -328,7 +328,7 @@ const nextImagePortfolio = () => {
       clickElement = parent.children[key];
     }
   }
-  addImg(clickElement,true);
+  addImg(clickElement, true);
 };
 
 const prevImagePortfolio = () => {
@@ -338,5 +338,30 @@ const prevImagePortfolio = () => {
       clickElement = parent.children[key];
     }
   }
-  addImg(clickElement,true);
+  addImg(clickElement, true);
 };
+
+let counterHeader;
+let marker = false;
+const head = document.querySelector(".header");
+
+const header = () => {
+  if (!marker && counterHeader > window.pageYOffset) {
+    marker = true;
+    head.style.position = "absolute";
+    head.style.top = window.pageYOffset - head.offsetHeight + "px";
+  }
+  if(window.pageYOffset <= head.offsetTop){
+    head.style.position= "fixed";
+    head.style.top = "0";
+    marker = true;
+  }
+  if (marker && counterHeader <= window.pageYOffset) {
+    marker = false
+    head.style.position = "absolute";
+    head.style.top = window.pageYOffset+"px";
+  }
+  counterHeader = window.pageYOffset;
+};
+
+window.addEventListener("scroll", header);

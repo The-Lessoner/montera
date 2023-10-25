@@ -6,9 +6,11 @@
   <link rel="stylesheet" href="./styles.css"/>
   <link rel="stylesheet" href="./fonts.css"/>
 </head>
-<body>
+<body id="top">
 <header class="header">
+  <a href="#top">
   <img src="./image/icon.svg" alt="icon" class="header_icon">
+  </a>
   <ul class="navigate">
     <li class="navigate_button">
       <p class="navigate_link" onclick="openMenu(this)">Услуги</p>
@@ -70,7 +72,7 @@
             <p class="about_text">Наша компания была организована 16 февраля 2022 года. Тогда перед нами стояла сложная
               задача зарекомендовать себя на рынке строительных услуг, как надежного партнера и добросовестного
               подрядчика. Мы поставили перед собой цель – создание качественных и надежных объектов, которые будут
-              служить на благо наших клиентов и
+              служить на благо наших клиентов и общества в целом.
             </p>
             <p class="about_text">На данный момент у нас уже выстроены долгосрочные отношения с рядом крупных
               организаций по городу Гродно и Гродненской области. Мы понимаем, что каждый проект уникален и требует
@@ -393,7 +395,7 @@
 </div>
 
 <div class="services">
-  <h2 class="title">Услуги</h2>
+  <h2 class="title services_title">Услуги</h2>
   <div class="services_types">
     <div class="services_column">
       <div id="work_1" class="services_type" onclick="hoverWork(this)">
@@ -608,11 +610,11 @@
     <div class="contact_inform_column">
       <div class="contact_inform_item">
         <img src="./image/smallCall.svg" alt="icon" class="contact_inform_icon">
-        <p class="contact_inform_text">+375(29)274-91-13</p>
+        <a href="tel:+375292749113" class="contact_inform_text">+375(29)274-91-13</a>
       </div>
       <div class="contact_inform_item">
         <img src="./image/comments_3.svg" alt="icon" class="contact_inform_icon">
-        <p class="contact_inform_text">ooomontera@mail.ru</p>
+        <a href="mailto:ooomontera@mail.ru" class="contact_inform_text">ooomontera@mail.ru</a>
       </div>
     </div>
     <div class="contact_inform_column">
@@ -643,7 +645,7 @@
   <div class="contact_map">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.3650781512022!2d23.87312449655271!3d53.68743457807996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dfd66bffe06321%3A0xb7a80719611c43e4!2z0YPQu9C40YbQsCDQmtGD0LnQsdGL0YjQtdCy0LAgNzQsINCT0YDQvtC00L3QsA!5e0!3m2!1sru!2sby!4v1697312633513!5m2!1sru!2sby"
-      width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
+      class="map" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
@@ -656,7 +658,7 @@
   <img src="./image/rightArrow.svg" alt="right" class="right arrow_library">
 </div>
 <div class="messenger">
-  <a href="tel:+375297839712" class="messenger_link">
+  <a href="tel:+375292749113" class="messenger_link">
     <img src="./image/Phone.svg" alt="Phone" class="messenger_icon">
   </a>
   <a href="viber://chat?number=%2B375292749113" class="messenger_link">
