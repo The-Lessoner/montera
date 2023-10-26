@@ -31,27 +31,27 @@ const hoverWork = (element) => {
 };
 
 const openMenu = (element) => {
-  const allElements = document.getElementsByClassName(element.className);
-  for (const key in allElements) {
-    if (allElements[key].nextElementSibling && allElements[key] !== element) {
-      const sister = allElements[key].nextElementSibling.className.split(" ");
-      if (sister.some(value => value === "is_open_menu")) {
-        allElements[key].nextElementSibling.className = "navigate_list";
-      }
-    }
-  }
-
-  const children = element.nextElementSibling;
-  if (children.className) {
-    let statusElement
-    if (children.className === "navigate_list") {
-      statusElement = "navigate_list is_open_menu";
-    }
-    if (children.className === "navigate_list is_open_menu") {
-      statusElement = "navigate_list";
-    }
-    children.className = statusElement
-  }
+  // const allElements = document.getElementsByClassName(element.className);
+  // for (const key in allElements) {
+  //   if (allElements[key].nextElementSibling && allElements[key] !== element) {
+  //     const sister = allElements[key].nextElementSibling.className.split(" ");
+  //     if (sister.some(value => value === "is_open_menu")) {
+  //       allElements[key].nextElementSibling.className = "navigate_list";
+  //     }
+  //   }
+  // }
+  //
+  // const children = element.nextElementSibling;
+  // if (children.className) {
+  //   let statusElement
+  //   if (children.className === "navigate_list") {
+  //     statusElement = "navigate_list is_open_menu";
+  //   }
+  //   if (children.className === "navigate_list is_open_menu") {
+  //     statusElement = "navigate_list";
+  //   }
+  //   children.className = statusElement
+  // }
 };
 
 const runCheck = (element, field) => {
@@ -366,3 +366,15 @@ const prevImagePortfolio = () => {
 // };
 //
 // window.addEventListener("scroll", header);
+
+const closeList = (e) => {
+  const list = document.getElementsByClassName("is_open_menu");
+  if (e.target.className !== "navigate_list is_open_menu" && list.length) {
+    list[0].className = "navigate_list";
+  }
+  if (e.target.className === "navigate_link") {
+    e.target.nextElementSibling.className ="navigate_list is_open_menu";
+  }
+};
+window.addEventListener("click", (event) => closeList(event));
+window.addEventListener("scroll",closeList);
