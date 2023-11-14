@@ -7,48 +7,74 @@
   <link rel="stylesheet" href="./fonts.css"/>
 </head>
 <body id="top">
-<header class="header">
+<header id="header" class="header">
   <a href="#top">
     <img src="./image/icon.svg" alt="icon" class="header_icon">
   </a>
   <ul class="navigate">
     <li class="navigate_button">
-      <p class="navigate_link" onclick="openMenu(this)">Услуги</p>
+      <p class="navigate_link">Услуги</p>
       <ul class="navigate_list">
-        <li class="navigate_item"><a href="#work_1" class="list_link" onclick="openWorkType(this)">Земляные работы</a>
+        <li class="navigate_item">
+          <a name="work_1" class="list_link" onclick="openWorkType(this)">Земляные работы</a>
         </li>
-        <li class="navigate_item"><a href="#work_2" class="list_link" onclick="openWorkType(this)">Бетонные работы</a>
+        <li class="navigate_item">
+          <a name="work_2" class="list_link" onclick="openWorkType(this)">Бетонные работы</a>
         </li>
-        <li class="navigate_item"><a href="#work_3" class="list_link" onclick="openWorkType(this)">Каменные работы </a>
+        <li class="navigate_item">
+          <a name="work_3" class="list_link" onclick="openWorkType(this)">Каменные работы </a>
         </li>
-        <li class="navigate_item"><a href="#work_4" class="list_link" onclick="openWorkType(this)">Монтаж
-          конструкций</a></li>
-        <li class="navigate_item"><a href="#work_5" class="list_link" onclick="openWorkType(this)">Кровельные работы</a>
+        <li class="navigate_item">
+          <a name="work_4" class="list_link" onclick="openWorkType(this)">Монтаж конструкций</a>
         </li>
-        <li class="navigate_item"><a href="#work_6" class="list_link" onclick="openWorkType(this)">Отделочные работы</a>
+        <li class="navigate_item">
+          <a name="work_5" class="list_link" onclick="openWorkType(this)">Кровельные работы</a>
         </li>
-        <li class="navigate_item"><a href="#work_7" class="list_link" onclick="openWorkType(this)">Благоустройство,
-          озеленение</a></li>
-        <li class="navigate_item"><a href="#work_8" class="list_link" onclick="openWorkType(this)">Устройство инжинерных
-          сетей</a>
+        <li class="navigate_item">
+          <a name="work_6" class="list_link" onclick="openWorkType(this)">Отделочные работы</a>
+        </li>
+        <li class="navigate_item">
+          <a name="work_7" class="list_link" onclick="openWorkType(this)">Благоустройство, озеленение</a>
+        </li>
+        <li class="navigate_item">
+          <a name="work_8" class="list_link" onclick="openWorkType(this)">Устройство инжинерных сетей</a>
         </li>
       </ul>
     </li>
-    <li class="navigate_button"><a href="#portfolio" class="navigate_link">Портфолио</a></li>
     <li class="navigate_button">
-      <p class="navigate_link" onclick="openMenu(this)">О компании</p>
+      <a name="portfolio" class="navigate_link" onclick="lightScroll(this.name)">Портфолио</a>
+    </li>
+    <li class="navigate_button">
+      <p class="navigate_link">О компании</p>
       <ul class="navigate_list">
-        <li class="navigate_item"><a href="#page_1" class="list_link">О нас</a></li>
-        <li class="navigate_item"><a href="#page_2" class="list_link">Наши преимущества</a></li>
-        <li class="navigate_item"><a href="#page_3" class="list_link">Как мы работаем</a></li>
-        <li class="navigate_item"><a href="#page_4" class="list_link">Аттестат соответствия</a></li>
-        <li class="navigate_item"><a href="#page_5" class="list_link">Сертификаты</a></li>
-        <li class="navigate_item"><a href="#page_6" class="list_link">Политика в области качества</a></li>
-        <li class="navigate_item"><a href="#page_7" class="list_link">Техническая компетенция</a></li>
-        <li class="navigate_item"><a href="#page_8" class="list_link">Отзывы</a></li>
+        <li class="navigate_item">
+          <a name="page_1" class="list_link" onclick="lightScroll(this.name)">О нас</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_2" class="list_link" onclick="lightScroll(this.name)">Наши преимущества</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_3" class="list_link" onclick="lightScroll(this.name)">Как мы работаем</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_4" class="list_link" onclick="lightScroll(this.name)">Аттестат соответствия</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_5" class="list_link" onclick="lightScroll(this.name)">Сертификаты</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_6" class="list_link" onclick="lightScroll(this.name)">Политика в области качества</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_7" class="list_link" onclick="lightScroll(this.name)">Техническая компетенция</a>
+        </li>
+        <li class="navigate_item">
+          <a name="page_8" class="list_link" onclick="lightScroll(this.name)">Отзывы</a>
+        </li>
       </ul>
     </li>
-    <li class="navigate_button"><a href="#contacts" class="navigate_link">Контакты</a></li>
+    <li class="navigate_button"><a name="contacts" class="navigate_link" onclick="lightScroll(this.name)">Контакты</a>
+    </li>
   </ul>
 </header>
 
@@ -69,29 +95,29 @@
       <div class="about_inform">
         <div class="about_history">
           <div class="about_wrapper_text">
-            <p class="about_text">Наша компания была организована 16 февраля 2022 года. Тогда перед нами стояла сложная
+            <p id="text" class="about_text">Наша компания была организована 16 февраля 2022 года. Тогда перед нами стояла сложная
               задача зарекомендовать себя на рынке строительных услуг, как надежного партнера и добросовестного
               подрядчика. Мы поставили перед собой цель – создание качественных и надежных объектов, которые будут
               служить на благо наших клиентов и общества в целом.
             </p>
-            <p class="about_text">На данный момент у нас уже выстроены долгосрочные отношения с рядом крупных
-              организаций по городу Гродно и Гродненской области. Мы понимаем, что каждый проект уникален и требует
-              индивидуального подхода. Поэтому мы тщательно изучаем потребности и цели каждого клиента, чтобы предложить
-              оптимальное решение, которое будет соответствовать их ожиданиям.
-            </p>
-            <p class="about_text">Также мы придерживаемся высоких стандартов качества и безопасности на всех этапах
-              строительства. Мы работаем с проверенными поставщиками материалов и используем современное оборудование,
-              чтобы гарантировать надежность и долговечность наших объектов.
-            </p>
-            <p class="about_text">Мы уже гордимся нашими достижениями и успешно реализованными объектами. Однако, мы не
-              останавливаемся на достигнутом и всегда ищем новые возможности для роста и развития. Строим будущее вместе
-              с нашими клиентами и всеми, кто разделяет нашу идею создания лучшей среды для жизни и работы. Если вы
-              ищите надежного и профессионального партнера для реализации своих строительных проектов, обратитесь к нам.
-              Мы с удовольствием поможем Вам воплотить ваши идеи в реальность и создать объект, которым будете
-              гордиться.
-            </p>
+<!--            <p class="about_text">На данный момент у нас уже выстроены долгосрочные отношения с рядом крупных-->
+<!--              организаций по городу Гродно и Гродненской области. Мы понимаем, что каждый проект уникален и требует-->
+<!--              индивидуального подхода. Поэтому мы тщательно изучаем потребности и цели каждого клиента, чтобы предложить-->
+<!--              оптимальное решение, которое будет соответствовать их ожиданиям.-->
+<!--            </p>-->
+<!--            <p class="about_text">Также мы придерживаемся высоких стандартов качества и безопасности на всех этапах-->
+<!--              строительства. Мы работаем с проверенными поставщиками материалов и используем современное оборудование,-->
+<!--              чтобы гарантировать надежность и долговечность наших объектов.-->
+<!--            </p>-->
+<!--            <p class="about_text">Мы уже гордимся нашими достижениями и успешно реализованными объектами. Однако, мы не-->
+<!--              останавливаемся на достигнутом и всегда ищем новые возможности для роста и развития. Строим будущее вместе-->
+<!--              с нашими клиентами и всеми, кто разделяет нашу идею создания лучшей среды для жизни и работы. Если вы-->
+<!--              ищите надежного и профессионального партнера для реализации своих строительных проектов, обратитесь к нам.-->
+<!--              Мы с удовольствием поможем Вам воплотить ваши идеи в реальность и создать объект, которым будете-->
+<!--              гордиться.-->
+<!--            </p>-->
           </div>
-          <button class="navigate_button about_button" onclick="closeAboutCompany(this, true)">показать еще</button>
+          <button class="navigate_button about_button" onclick="closeAboutCompany(this)">показать еще</button>
         </div>
         <div class="about_wrapper_img">
         </div>
@@ -220,9 +246,9 @@
   </div>
 
   <div class="section">
-    <h2 id="page_4" class="subtitle">Документация</h2>
+    <h2 class="subtitle">Документация</h2>
     <div class="documents">
-      <div class="documents_chapter">
+      <div id="page_4" class="documents_chapter">
         <input id="diploma" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="diploma" class="documents_chapter_name">
           Аттестат соответствия
@@ -384,7 +410,7 @@
       <div class="review_wrapper_pages">
         <img src="./image/”.svg" alt="icon" class="review_icon">
         <div class="review_pages">
-          <span class="review_page" onclick="openReview(event)">1</span>
+          <span class="review_page active_button" onclick="openReview(event)">1</span>
           <span class="review_page" onclick="openReview(event)">2</span>
           <span class="review_page" onclick="openReview(event)">3</span>
           <span class="review_page" onclick="openReview(event)">4</span>
@@ -398,12 +424,12 @@
   <h2 class="title services_title">Услуги</h2>
   <div class="services_types">
     <div class="services_column">
-      <div id="work_1" class="services_type" onclick="hoverWork(this)">
+      <div id="work_1" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img1.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Земляные работы</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">Земляные работы
             <li class="services_type_li">разработка выемок и котлованов;</li>
             <li class="services_type_li">разработка насыпи и обратной зысыпки.</li>
@@ -414,12 +440,12 @@
           </ul>
         </div>
       </div>
-      <div id="work_2" class="services_type" onclick="hoverWork(this)">
+      <div id="work_2" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img5.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Бетонные работы</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">
             <li class="services_type_li"> Опалубочные работы;</li>
             <li class="services_type_li">Арматурные работы;</li>
@@ -427,25 +453,25 @@
           </ul>
         </div>
       </div>
-      <div id="work_3" class="services_type" onclick="hoverWork(this)">
+      <div id="work_3" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img8.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Каменные работы</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">
-            <li class="services_type_li">Возведение каменных и арнокаменных конструкций.</li>
+            <li class="services_type_li">Возведение каменных и армокаменных конструкций.</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="services_column">
-      <div id="work_4" class="services_type" onclick="hoverWork(this)">
+      <div id="work_4" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img2.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Монтаж конструкций</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
 
           <ul class="services_type_ul"> Монтаж сборных бетонных и железобетонных конструкций
             <li class="services_type_li">Монтаж стен подземной части здания;</li>
@@ -474,12 +500,12 @@
           </ul>
         </div>
       </div>
-      <div id="work_5" class="services_type" onclick="hoverWork(this)">
+      <div id="work_5" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img6.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Кровельные работы</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">
             <li class="services_type_li">Рулонные и мастичные, из азбествых и цементно-волокнистых волнистых листов, из
               мелкоштучных материалов, из листовой стали, металлического профилированного настила, металлочерепицы,
@@ -488,12 +514,12 @@
           </ul>
         </div>
       </div>
-      <div id="work_6" class="services_type" onclick="hoverWork(this)">
+      <div id="work_6" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img4.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Отделочные работы</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">
             <li class="services_type_li">Штукатурные работы;</li>
             <li class="services_type_li">Облицовочные работы;</li>
@@ -509,12 +535,12 @@
       </div>
     </div>
     <div class="services_column">
-      <div id="work_7" class="services_type" onclick="hoverWork(this)">
+      <div id="work_7" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img3.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Благоустройство, озеленение</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">
             <li class="services_type_li">Устройство асфальбетонных покрытий;</li>
             <li class="services_type_li">Устройство дорожных одежд с покрытием из плит тротуарных пешеходных путей и
@@ -524,12 +550,12 @@
           </ul>
         </div>
       </div>
-      <div id="work_8" class="services_type" onclick="hoverWork(this)">
+      <div id="work_8" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
           <img src="./image/img7.svg" alt="icon" class="services_type_icon">
           <p class="services_type_name">Устройство инженерных сетей</p>
         </div>
-        <div class="services_type_content is_close">
+        <div class="services_type_content">
           <ul class="services_type_ul">Монтаж внутренних инженерных систем зданий и сооружений
             <li class="services_type_li">Водоснабжение и канализация;</li>
             <li class="services_type_li">Вентиляция и кондиционирование воздуха;</li>
@@ -549,45 +575,55 @@
 
 <div class="portfolio">
   <h2 id="portfolio" class="title">Портфолио</h2>
-  <div>
-    <div class="portfolio_gallery">
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_9.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Здание многофункциональное</p>
-        <p class="project_inform">Город Гродно, улица Фомичева, 2.</p>
-      </div>
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_11.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Группы жилых домов</p>
-        <p class="project_inform">Микрорайон Барановичи 9, город Гродно.</p>
-      </div>
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_10.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Здание многофункциональное</p>
-        <p class="project_inform">Проспект Я.Купалы 72 Б, город Гродно.</p>
-      </div>
+  <div class="content_slider">
+    <div class="portfolio_slider">
+      <img src="./image/leftArrow.svg" onclick="prevProject()" alt="left" class="arrow_library">
+      <div class="portfolio_gallery">
 
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_8.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Модернизация здания</p>
-        <p class="project_inform">Город Волковыск, улица Матросава.</p>
-      </div>
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_2.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Реконструкция жилого дома</p>
-        <p class="project_inform">Улица Садовая в а/городке Глядовичи.</p>
-      </div>
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_7.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Возведение здания</p>
-        <p class="project_inform">Улица Гаражная 15/3.</p>
-      </div>
-      <div class="project hidden_project">
-        <img src="image/photo/project/project_4.jpg" alt="photo" class="project_photo">
-        <p class="project_name">Склады готовой продукции</p>
-        <p class="project_inform">Территория СЭЗ. “Гродно-Инвест” по улице Аульская в г. Гродно.</p>
-      </div>
+        <div class="project">
+          <img src="image/photo/project/project_9.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Здание многофункциональное</p>
+          <p class="project_inform">Город Гродно, улица Фомичева, 2.</p>
+        </div>
 
+        <div class="project">
+          <img src="image/photo/project/project_11.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Группы жилых домов</p>
+          <p class="project_inform">Микрорайон Барановичи 9, город Гродно.</p>
+        </div>
+
+        <div class="project">
+          <img src="image/photo/project/project_10.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Здание многофункциональное</p>
+          <p class="project_inform">Проспект Я.Купалы 72 Б, город Гродно.</p>
+        </div>
+
+        <div class="project">
+          <img src="image/photo/project/project_8.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Модернизация здания</p>
+          <p class="project_inform">Город Волковыск, улица Матросава.</p>
+        </div>
+
+        <div class="project">
+          <img src="image/photo/project/project_2.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Реконструкция жилого дома</p>
+          <p class="project_inform">Улица Садовая в а/городке Глядовичи.</p>
+        </div>
+
+        <div class="project">
+          <img src="image/photo/project/project_7.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Возведение здания</p>
+          <p class="project_inform">Улица Гаражная 15/3.</p>
+        </div>
+
+        <div class="project">
+          <img src="image/photo/project/project_4.jpg" alt="photo" class="project_photo">
+          <p class="project_name">Склады готовой продукции</p>
+          <p class="project_inform">Территория СЭЗ. “Гродно-Инвест” по улице Аульская в г. Гродно.</p>
+        </div>
+
+      </div>
+      <img src="./image/rightArrow.svg" onclick="nextProject()" alt="right" class="arrow_library">
 
     </div>
     <div class="portfolio_gallery_buttons">
@@ -646,8 +682,7 @@
 <div class="increase_wrapper_library" onclick="closeWrapper(event)">
   <img src="./image/leftArrow.svg" alt="left" class="left arrow_library">
   <div class="increase_documents_library">
-    <div class="increase_documents_images">
-    </div>
+    <div class="increase_documents_images"></div>
   </div>
   <img src="./image/rightArrow.svg" alt="right" class="right arrow_library">
 </div>
@@ -664,5 +699,8 @@
 </div>
 
 <script type="text/javascript" src="./script.js"></script>
+<script type="text/javascript" src="./aboutUs.js"></script>
+<script type="text/javascript" src="./service.js"></script>
+<script type="text/javascript" src="./gallery.js"></script>
 </body>
 </html>
