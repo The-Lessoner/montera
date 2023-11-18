@@ -3,9 +3,11 @@ const lightScroll = (name) => {
   for (const key in parent.children) {
     if (parent.children[key].tagName === "INPUT") {
       document.querySelectorAll(`.${parent.children[key].className}`).forEach(input => {
-        input.checked = false;
+        if (input.checked) {
+          input.click();
+        }
       });
-      parent.children[key].click()
+      parent.children[key].click();
     }
   }
   window.scroll(0, parent.offsetTop - document.getElementById("header").offsetHeight - 20);
@@ -46,10 +48,10 @@ const closeList = (e) => {
     list[0].className = "navigate_list";
     window.removeEventListener("scroll", closeList);
   }
-  if (e.target.className === "navigate_link") {
+  if (e.target.className === "navigate_link" && e.target.nextElementSibling) {
     e.target.nextElementSibling.className = "navigate_list is_open_menu";
-    window.addEventListener("scroll", closeList);
+    window.addEventListener("scroll", closeList, {passive: true});
   }
 };
 
-window.addEventListener("click", (event) => closeList(event));
+window.addEventListener("click", (event) => closeList(event), {passive: true});

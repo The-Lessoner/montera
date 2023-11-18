@@ -173,7 +173,7 @@
   padding-block: 20px;
   width: 100%;
   gap: 30px;
-  top: 130px;
+  top: 238px;
   background: #FFFFFF80;
   box-shadow: 0 4px 10px 0 #6100001A;
   user-select: none;
@@ -230,91 +230,91 @@
   -webkit-line-clamp: 4;
 }
 
-.about_wrapper_hidden {
-  animation: 0.4s linear 0.2s 1 alternate hidden_wrapper;
-  animation-fill-mode: both;
-}
+/*.about_wrapper_hidden {*/
+/*  animation: 0.4s linear 0.2s 1 alternate hidden_wrapper;*/
+/*  animation-fill-mode: both;*/
+/*}*/
 
-@keyframes hidden_wrapper {
-  0% {
-    -webkit-line-clamp: 4;
-  }
-  4% {
-    -webkit-line-clamp: 5;
-  }
-  8% {
-    -webkit-line-clamp: 6;
-  }
-  12% {
-    -webkit-line-clamp: 7;
-  }
-  16% {
-    -webkit-line-clamp: 8;
-  }
-  20% {
-    -webkit-line-clamp: 9;
-  }
-  24% {
-    -webkit-line-clamp: 10;
-  }
-  28% {
-    -webkit-line-clamp: 11;
-  }
-  32% {
-    -webkit-line-clamp: 12;
-  }
-  36% {
-    -webkit-line-clamp: 13;
-  }
-  40% {
-    -webkit-line-clamp: 14;
-  }
-  44% {
-    -webkit-line-clamp: 15;
-  }
-  48% {
-    -webkit-line-clamp: 16;
-  }
-  52% {
-    -webkit-line-clamp: 17;
-  }
-  54% {
-    -webkit-line-clamp: 18;
-  }
-  58% {
-    -webkit-line-clamp: 19;
-  }
-  62% {
-    -webkit-line-clamp: 20;
-  }
-  68% {
-    -webkit-line-clamp: 21;
-  }
-  72% {
-    -webkit-line-clamp: 22;
-  }
-  76% {
-    -webkit-line-clamp: 23;
-  }
-  80% {
-    -webkit-line-clamp: 24;
-  }
-  84% {
-    -webkit-line-clamp: 25;
-  }
-  88% {
-    -webkit-line-clamp: 26;
-  }
-  92% {
-    -webkit-line-clamp: 27;
-  }
-  96% {
-    -webkit-line-clamp: 28;
-  }
-  100% {
-    -webkit-line-clamp: 29;
-  }
-}
+/*@keyframes hidden_wrapper {*/
+/*  0% {*/
+/*    -webkit-line-clamp: 4;*/
+/*  }*/
+/*  4% {*/
+/*    -webkit-line-clamp: 5;*/
+/*  }*/
+/*  8% {*/
+/*    -webkit-line-clamp: 6;*/
+/*  }*/
+/*  12% {*/
+/*    -webkit-line-clamp: 7;*/
+/*  }*/
+/*  16% {*/
+/*    -webkit-line-clamp: 8;*/
+/*  }*/
+/*  20% {*/
+/*    -webkit-line-clamp: 9;*/
+/*  }*/
+/*  24% {*/
+/*    -webkit-line-clamp: 10;*/
+/*  }*/
+/*  28% {*/
+/*    -webkit-line-clamp: 11;*/
+/*  }*/
+/*  32% {*/
+/*    -webkit-line-clamp: 12;*/
+/*  }*/
+/*  36% {*/
+/*    -webkit-line-clamp: 13;*/
+/*  }*/
+/*  40% {*/
+/*    -webkit-line-clamp: 14;*/
+/*  }*/
+/*  44% {*/
+/*    -webkit-line-clamp: 15;*/
+/*  }*/
+/*  48% {*/
+/*    -webkit-line-clamp: 16;*/
+/*  }*/
+/*  52% {*/
+/*    -webkit-line-clamp: 17;*/
+/*  }*/
+/*  54% {*/
+/*    -webkit-line-clamp: 18;*/
+/*  }*/
+/*  58% {*/
+/*    -webkit-line-clamp: 19;*/
+/*  }*/
+/*  62% {*/
+/*    -webkit-line-clamp: 20;*/
+/*  }*/
+/*  68% {*/
+/*    -webkit-line-clamp: 21;*/
+/*  }*/
+/*  72% {*/
+/*    -webkit-line-clamp: 22;*/
+/*  }*/
+/*  76% {*/
+/*    -webkit-line-clamp: 23;*/
+/*  }*/
+/*  80% {*/
+/*    -webkit-line-clamp: 24;*/
+/*  }*/
+/*  84% {*/
+/*    -webkit-line-clamp: 25;*/
+/*  }*/
+/*  88% {*/
+/*    -webkit-line-clamp: 26;*/
+/*  }*/
+/*  92% {*/
+/*    -webkit-line-clamp: 27;*/
+/*  }*/
+/*  96% {*/
+/*    -webkit-line-clamp: 28;*/
+/*  }*/
+/*  100% {*/
+/*    -webkit-line-clamp: 29;*/
+/*  }*/
+/*}*/
 
 .about_text {
   font-size: 16px;
@@ -527,10 +527,12 @@
 }
 
 .wrapper_library {
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 60px;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
 }
 
 .arrow_library {
@@ -592,6 +594,7 @@
 .documents_library {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 60px;
 }
 
 .increase_documents_library {
@@ -635,13 +638,13 @@
   display: block;
 }
 
-#diploma:checked ~ .wrapper_library {
-  display: flex;
-}
+/*#diploma:checked ~ .wrapper_library {*/
+/*  display: flex;*/
+/*}*/
 
-#certificate:checked ~ .wrapper_library {
-  display: flex;
-}
+/*#certificate:checked ~ .wrapper_library {*/
+/*  display: flex;*/
+/*}*/
 
 #certificate:checked ~ .documents_chapter_name > .visible {
   display: none;
@@ -651,9 +654,9 @@
   display: block;
 }
 
-#politic:checked ~ .wrapper_library {
-  display: flex;
-}
+/*#politic:checked ~ .wrapper_library {*/
+/*  display: flex;*/
+/*}*/
 
 #politic:checked ~ .documents_chapter_name > .visible {
   display: none;
@@ -663,9 +666,9 @@
   display: block;
 }
 
-#technic:checked ~ .wrapper_library {
-  display: flex;
-}
+/*#technic:checked ~ .wrapper_library {*/
+/*  display: flex;*/
+/*}*/
 
 #technic:checked ~ .documents_chapter_name > .visible {
   display: none;

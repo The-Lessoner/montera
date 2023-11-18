@@ -26,23 +26,61 @@ const chooseWidth = () => {
   images.forEach(img => {
     widthImg = (fieldWidth - 60) / countItems;
     img.style.width = widthImg + "px";
+    img.style.height = widthImg * 1.4 + "px";
   });
 };
 
 document.querySelectorAll(".documents_library_photo").forEach(img => {
-  img.addEventListener("click", (e) => increaseImg(e.target, false));
+  img.addEventListener("click", (e) => increaseImg(e.target, false), {passive: true});
 });
 
-window.addEventListener("resize", chooseWidth);
+window.addEventListener("resize", () => {
+  chooseWidth()
+}, {passive: true});
 
 const openGallery = (element) => {
+  chooseWidth();
   const id = element.id;
   const imgArray = document.querySelectorAll(`img[alt=${id}]`);
-  countImg = imgArray.length
+  countImg = imgArray.length;
   const item = element.parentElement.children;
-  if (countImg <= countItems) {
-    for (const key in item) {
-      if (item[key].className === "wrapper_library") {
+  for (const key in item) {
+    if (item[key].className === "wrapper_library") {
+      if (element.checked) {
+        item[key].animate([
+            {
+              height: "0",
+            },
+            {
+              height: `${widthImg * 1.4 + +60 + "px"}`,
+              visibility: "visible",
+            }
+          ],
+          {
+            duration: 200,
+            fill: "both",
+            delay: "100",
+            easing: "ease-in"
+          }
+        );
+      } else {
+        item[key].animate([
+            {
+              height: `${widthImg * 1.4 + "px"}`,
+              visibility: "visible",
+            },
+            {
+              height: "0",
+              visibility: "hidden",
+            }
+          ],
+          {
+            duration: 0,
+            fill: "both"
+          }
+        );
+      }
+      if (countImg <= countItems) {
         const gallery = item[key].children;
         for (let child in gallery) {
           if (gallery[child].tagName === "IMG") {
@@ -52,7 +90,6 @@ const openGallery = (element) => {
       }
     }
   }
-  chooseWidth()
 };
 
 const checkArrow = (element) => {
@@ -115,13 +152,13 @@ const increaseImg = (element, portfolio) => {
   addImg(clickElement, portfolio);
 
   if (portfolio) {
-    leftArrow.addEventListener("click", prevImagePortfolio);
-    rightArrow.addEventListener("click", nextImagePortfolio);
+    leftArrow.addEventListener("click", prevImagePortfolio, {passive: true});
+    rightArrow.addEventListener("click", nextImagePortfolio, {passive: true});
     rightArrow.style.visibility = "visible";
     leftArrow.style.visibility = "visible";
   } else {
-    leftArrow.addEventListener("click", prevImg);
-    rightArrow.addEventListener("click", nextImg);
+    leftArrow.addEventListener("click", prevImg, {passive: true});
+    rightArrow.addEventListener("click", nextImg, {passive: true});
   }
 };
 
@@ -236,7 +273,6 @@ const prevImagePortfolio = () => {
 };
 
 const setParamImg = () => {
-  console.log('o')
   const allPhotos = document.querySelectorAll(".project_photo");
   for (let i = 0; i < allPhotos.length; i++) {
     if (i === 0) {
@@ -249,8 +285,8 @@ const setParamImg = () => {
   }
 };
 
-window.addEventListener("load", setParamImg);
-window.addEventListener("resize", setParamImg);
+window.addEventListener("load", setParamImg, {passive: true});
+window.addEventListener("resize", setParamImg, {passive: true});
 
 const animateNext = () => {
   const allPhotos = document.querySelectorAll(".project_photo");
@@ -343,13 +379,13 @@ const animateBack = () => {
       allPhotos[i].animate([
         {
           // opacity: "1",
-          width:`${widthImageGallery}px`,
-          height:`${widthImageGallery * 1.2}px`
+          width: `${widthImageGallery}px`,
+          height: `${widthImageGallery * 1.2}px`
         },
         {
           // opacity: "1",
-          width:`${widthImageGallery}px`,
-          height:`${widthImageGallery * 1.2}px`
+          width: `${widthImageGallery}px`,
+          height: `${widthImageGallery * 1.2}px`
         }
       ], {
         duration: interval,
@@ -370,15 +406,15 @@ const animateBack = () => {
 
       });
     }
-    if(i===2){
+    if (i === 2) {
       allPhotos[i].animate([
         {
           width: `${widthImageGallery}px`,
           height: `${widthImageGallery * 1.2}px`,
         },
         {
-          width: `${widthImageGallery *0.8}px`,
-          height: `${widthImageGallery *0.8* 1.2}px`,
+          width: `${widthImageGallery * 0.8}px`,
+          height: `${widthImageGallery * 0.8 * 1.2}px`,
         }
       ], {
         duration: interval,
@@ -400,8 +436,8 @@ const animateBack = () => {
       });
       allPhotos[i].animate([
         {
-          width: `${widthImageGallery *0.8}px`,
-          height: `${widthImageGallery *0.8* 1.2}px`,
+          width: `${widthImageGallery * 0.8}px`,
+          height: `${widthImageGallery * 0.8 * 1.2}px`,
         },
         {
           width: `${widthImageGallery}px`,
@@ -438,8 +474,8 @@ const prevProject = () => {
   }, 0);
 };
 
-next.addEventListener("click", nextProject);
-previous.addEventListener("click", prevProject);
+next.addEventListener("click", nextProject, {passive: true});
+previous.addEventListener("click", prevProject, {passive: true});
 
 // const portfolio = document.querySelector(".content_slider");
 // let moveSlider = setInterval(nextProject, interval);

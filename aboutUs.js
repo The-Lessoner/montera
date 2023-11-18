@@ -6,7 +6,7 @@ const inform = [
 const content = document.querySelector(".about_wrapper_text");
 
 const runCheck = () => {
-  addEventListener("scroll", checkScroll);
+  addEventListener("scroll", checkScroll,{passive: true});
 };
 
 const checkScroll = () => {
