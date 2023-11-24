@@ -1058,17 +1058,20 @@
   display: flex;
   justify-content: center;
   padding-block: 20px;
-  background: #3a3939;
-  color: #FFFFFF;
+  background: #4F4F4F;
+  color: darkgrey;
   font-family: Rostov, sans-serif;
   font-size: 1rem;
-  font-style: italic;
   letter-spacing: 2px;
   cursor: default;
 }
 
 .team_name {
-  color: #FFFFFF;
-  padding-left: 10px;
+  color: lightsteelblue;
+  padding-left: 3px;
   cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.03rem;
+  letter-spacing: 1px;
 }
