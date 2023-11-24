@@ -1061,8 +1061,9 @@
   background: #3a3939;
   color: #FFFFFF;
   font-family: Rostov, sans-serif;
-  font-size: 2rem;
+  font-size: 1rem;
   font-style: italic;
+  letter-spacing: 2px;
   cursor: default;
 }
 
