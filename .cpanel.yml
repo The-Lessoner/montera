@@ -10,4 +10,5 @@ deployment:
     - /bin/cp gallery.js $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
+    - /bin/cp service.js $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
