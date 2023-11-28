@@ -2,4 +2,12 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/moterab/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R fonts $DEPLOYPATH
+    - /bin/cp -R image $DEPLOYPATH
+    - /bin/cp -R video $DEPLOYPATH
+    - /bin/cp aboutUs.js $DEPLOYPATH
+    - /bin/cp fonts.css $DEPLOYPATH
+    - /bin/cp gallery.js $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp script.js $DEPLOYPATH
+    - /bin/cp styles.css $DEPLOYPATH
