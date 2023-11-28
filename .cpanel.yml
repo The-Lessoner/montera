@@ -12,3 +12,6 @@ deployment:
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp service.js $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
+    - export REPOPATH=/home/monterab/repositories/*
+      - export SITEPATH=/home/yourdoma/public_html/
+      - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del
