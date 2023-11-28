@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/moterab/public_html/
+    - export DEPLOYPATH=/home/monterab/public_html/
     - /bin/cp -R fonts $DEPLOYPATH
     - /bin/cp -R image $DEPLOYPATH
     - /bin/cp -R video $DEPLOYPATH
