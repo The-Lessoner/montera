@@ -15,4 +15,4 @@ jobs:
           server: ftp.montera.by
           username: Artsiom@montera.by
           password: 2368230aA
-          server-dir: /public_html
+          server-dir: /public_html/
