@@ -2,5 +2,5 @@
 deployment:
   tasks:
     - export REPOPATH=/home/monterab/repositories/*
-    - export SITEPATH=/home/yourdoma/public_html/
+    - export SITEPATH=/home/monterab/public_html/
     - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del
