@@ -1,4 +1,6 @@
 const lightScroll = (name) => {
+  const burgerId = document.getElementById("burger");
+  burgerId.checked = false;
   const parent = document.getElementById(name);
   for (const key in parent.children) {
     if (parent.children[key].tagName === "INPUT") {
@@ -31,15 +33,16 @@ const openReview = (event) => {
 };
 
 const reviewIncrease = (event) => {
-  const increase = document.querySelector(".increase_wrapper_library");
-  increase.className = "increase_wrapper_library open_slider";
-  const wrapperImage = document.querySelector(".increase_documents_images")
-  wrapperImage.innerHTML = `<img src =${event.target.previousElementSibling.src} alt="review" class="increase_documents_library_photo" />`;
-  for (const key in increase.children) {
-    if (increase.children[key].tagName === "IMG") {
-      increase.children[key].style.visibility = "hidden";
-    }
-  }
+  const wrapper = document.createElement("div");
+  wrapper.className = "increase_wrapper";
+  document.body.appendChild(wrapper);
+  const image = event.target.previousElementSibling.cloneNode();
+  image.className = "increase_image";
+  wrapper.appendChild(image);
+};
+
+const closeReview = (event) => {
+  event.target.parentElement.remove();
 };
 
 const closeList = (e) => {

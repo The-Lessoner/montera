@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Montera.by</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="website">
   <link rel="icon" type="image/svg" sizes="32x32" href="./image/icon.svg"/>
   <link rel="stylesheet" href="./fonts.css"/>
   <link rel="stylesheet" href="./styles.css"/>
@@ -10,73 +12,90 @@
 <body id="top">
 <header id="header" class="header">
   <a href="#top">
-    <img src="./image/icon.svg" alt="icon" class="header_icon">
+    <img src="./image/icon.svg" alt="icon" class="header_icon"/>
   </a>
-  <ul class="navigate">
-    <li class="navigate_button">
-      <p class="navigate_link">Услуги</p>
-      <ul class="navigate_list">
-        <li class="navigate_item">
-          <a name="work_1" class="list_link" onclick="openWorkType(this)">Земляные работы</a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_2" class="list_link" onclick="openWorkType(this)">Бетонные работы</a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_3" class="list_link" onclick="openWorkType(this)">Каменные работы </a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_4" class="list_link" onclick="openWorkType(this)">Монтаж конструкций</a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_5" class="list_link" onclick="openWorkType(this)">Кровельные работы</a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_6" class="list_link" onclick="openWorkType(this)">Отделочные работы</a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_7" class="list_link" onclick="openWorkType(this)">Благоустройство, озеленение</a>
-        </li>
-        <li class="navigate_item">
-          <a name="work_8" class="list_link" onclick="openWorkType(this)">Устройство инжинерных сетей</a>
-        </li>
-      </ul>
-    </li>
-    <li class="navigate_button">
-      <a name="portfolio" class="navigate_link" onclick="lightScroll(this.name)">Портфолио</a>
-    </li>
-    <li class="navigate_button">
-      <p class="navigate_link">О компании</p>
-      <ul class="navigate_list">
-        <li class="navigate_item">
-          <a name="page_1" class="list_link" onclick="lightScroll(this.name)">О нас</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_2" class="list_link" onclick="lightScroll(this.name)">Наши преимущества</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_3" class="list_link" onclick="lightScroll(this.name)">Как мы работаем</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_4" class="list_link" onclick="lightScroll(this.name)">Аттестат соответствия</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_5" class="list_link" onclick="lightScroll(this.name)">Сертификаты</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_6" class="list_link" onclick="lightScroll(this.name)">Политика в области качества</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_7" class="list_link" onclick="lightScroll(this.name)">Техническая компетенция</a>
-        </li>
-        <li class="navigate_item">
-          <a name="page_8" class="list_link" onclick="lightScroll(this.name)">Отзывы</a>
-        </li>
-      </ul>
-    </li>
-    <li class="navigate_button"><a name="contacts" class="navigate_link" onclick="lightScroll(this.name)">Контакты</a>
-    </li>
-  </ul>
+  <input type="checkbox" id="burger"/>
+  <label for="burger" class="burger">
+    <span class="menu_burger"></span>
+  </label>
+  <nav class="wrapper_navigate">
+    <ul class="navigate">
+      <li class="navigate_button">
+        <p class="navigate_link">Услуги</p>
+        <ul class="navigate_list">
+          <li class="navigate_item">
+            <a name="work_1" class="list_link" onclick="openWorkType(this)">Земляные работы</a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_2" class="list_link" onclick="openWorkType(this)">Бетонные работы</a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_3" class="list_link" onclick="openWorkType(this)">Каменные работы </a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_4" class="list_link" onclick="openWorkType(this)">Монтаж конструкций</a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_5" class="list_link" onclick="openWorkType(this)">Кровельные работы</a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_6" class="list_link" onclick="openWorkType(this)">Отделочные работы</a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_7" class="list_link" onclick="openWorkType(this)">Благоустройство, озеленение</a>
+          </li>
+          <li class="navigate_item">
+            <a name="work_8" class="list_link" onclick="openWorkType(this)">Устройство инжинерных сетей</a>
+          </li>
+        </ul>
+      </li>
+      <li class="navigate_button">
+        <a name="portfolio" class="navigate_link" onclick="lightScroll(this.name)">Портфолио</a>
+      </li>
+      <li class="navigate_button">
+        <p class="navigate_link">О компании</p>
+        <ul class="navigate_list">
+          <li class="navigate_item">
+            <a name="page_1" class="list_link" onclick="lightScroll(this.name)">О нас</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_2" class="list_link" onclick="lightScroll(this.name)">Наши преимущества</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_3" class="list_link" onclick="lightScroll(this.name)">Как мы работаем</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_4" class="list_link" onclick="lightScroll(this.name)">Аттестат соответствия</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_5" class="list_link" onclick="lightScroll(this.name)">Сертификаты</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_6" class="list_link" onclick="lightScroll(this.name)">Политика в области качества</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_7" class="list_link" onclick="lightScroll(this.name)">Техническая компетенция</a>
+          </li>
+          <li class="navigate_item">
+            <a name="page_8" class="list_link" onclick="lightScroll(this.name)">Отзывы</a>
+          </li>
+        </ul>
+      </li>
+      <li class="navigate_button"><a name="contacts" class="navigate_link" onclick="lightScroll(this.name)">Контакты</a>
+      </li>
+      <li class="nav_messenger">
+        <a href="tel:+375292749113" class="messenger_link">
+          <img src="./image/Phone.svg" alt="Phone" class="messenger_icon"/>
+        </a>
+        <a href="viber://chat?number=%2B375292749113" class="messenger_link">
+          <img src="./image/Viber.svg" alt="Viber" class="messenger_icon"/>
+        </a>
+        <a href="https://t.me/Kleukin" class="messenger_link">
+          <img src="./image/Telegram.svg" alt="Telegram" class="messenger_icon"/>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <div class="main">
@@ -116,64 +135,64 @@
     <div class="advantages_content">
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Frame.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteFrame.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Frame.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteFrame.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Без посредников. Заказ напрямую у подрядчика.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Shield-tick.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteShield-tick.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Shield-tick.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteShield-tick.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Гарантия 5 лет по договору. 100% контроль качества на каждом этапе.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Lightbulb_on.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteLightbulb_on.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Lightbulb_on.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteLightbulb_on.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Полный комплекс услуг строительства.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Graph_up.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteGraph_up.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Graph_up.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteGraph_up.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Квалифицированные специалисты с многолетним опытом работы.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Emoji-smile.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteEmoji-smile.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Emoji-smile.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteEmoji-smile.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Фиксированная цена. Честность и прозрачность.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/lock.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whitelock.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/lock.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whitelock.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Надежность и качество.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/like.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whitelike.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/like.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whitelike.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Удобная поэтапная форма оплаты.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Calendar_Check.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteCalendar_Check.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Calendar_Check.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteCalendar_Check.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Заказ точно в срок. Фиксация графика работ в договоре.</p>
       </div>
       <div class="advantages_item">
         <div class="advantages_wrapper_icon">
-          <img src="./image/Money_Bag.svg" alt="icon" class="advantages_icon visible">
-          <img src="./image/whiteMoney_Bag.svg" alt="icon" class="advantages_icon hidden">
+          <img src="./image/Money_Bag.svg" alt="icon" class="advantages_icon visible"/>
+          <img src="./image/whiteMoney_Bag.svg" alt="icon" class="advantages_icon hidden"/>
         </div>
         <p class="advantages_text">Работаем с кредитами банка.</p>
       </div>
@@ -187,8 +206,8 @@
         <p class="our_work_text">Звонок.</p>
         <div class="our_work_container">
           <div class="our_work_wrapper_icon">
-            <img src="./image/Call.svg" alt="icon" class="our_work_icon visible">
-            <img src="./image/whiteCall.svg" alt="icon" class="our_work_icon hidden">
+            <img src="./image/Call.svg" alt="icon" class="our_work_icon visible"/>
+            <img src="./image/whiteCall.svg" alt="icon" class="our_work_icon hidden"/>
           </div>
         </div>
       </div>
@@ -196,8 +215,8 @@
         <p class="our_work_text">Бесплатный выезд специалиста на объект.</p>
         <div class="our_work_container">
           <div class="our_work_wrapper_icon">
-            <img src="./image/Truck_Speed.svg" alt="icon" class="our_work_icon visible">
-            <img src="./image/whiteTruck_Speed.svg" alt="icon" class="our_work_icon hidden">
+            <img src="./image/Truck_Speed.svg" alt="icon" class="our_work_icon visible"/>
+            <img src="./image/whiteTruck_Speed.svg" alt="icon" class="our_work_icon hidden"/>
           </div>
         </div>
       </div>
@@ -205,8 +224,8 @@
         <p class="our_work_text">Подготовка и заключение договора.</p>
         <div class="our_work_container">
           <div class="our_work_wrapper_icon">
-            <img src="./image/Notepad_edit.svg" alt="icon" class="our_work_icon visible">
-            <img src="./image/whiteNotepad_edit.svg" alt="icon" class="our_work_icon hidden">
+            <img src="./image/Notepad_edit.svg" alt="icon" class="our_work_icon visible"/>
+            <img src="./image/whiteNotepad_edit.svg" alt="icon" class="our_work_icon hidden"/>
           </div>
         </div>
       </div>
@@ -214,8 +233,8 @@
         <p class="our_work_text">Выполнение работ.</p>
         <div class="our_work_container">
           <div class="our_work_wrapper_icon">
-            <img src="./image/home-heart.svg" alt="icon" class="our_work_icon visible">
-            <img src="./image/whiteHome-heart.svg" alt="icon" class="our_work_icon hidden">
+            <img src="./image/home-heart.svg" alt="icon" class="our_work_icon visible"/>
+            <img src="./image/whiteHome-heart.svg" alt="icon" class="our_work_icon hidden"/>
           </div>
         </div>
       </div>
@@ -223,8 +242,8 @@
         <p class="our_work_text">Приемка работ, окончательная плата.</p>
         <div class="our_work_container">
           <div class="our_work_wrapper_icon">
-            <img src="./image/discount-check.svg" alt="icon" class="our_work_icon visible">
-            <img src="./image/whiteDiscount-check.svg" alt="icon" class="our_work_icon hidden">
+            <img src="./image/discount-check.svg" alt="icon" class="our_work_icon visible"/>
+            <img src="./image/whiteDiscount-check.svg" alt="icon" class="our_work_icon hidden"/>
           </div>
         </div>
       </div>
@@ -238,85 +257,232 @@
         <input id="diploma" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="diploma" class="documents_chapter_name">
           Аттестат соответствия
-          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
-          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
+          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible"/>
+          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden"/>
         </label>
         <div class="wrapper_library">
-          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
-          <div class="documents_library">
-            <div class="documents_images">
-              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_2.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_1.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_1-2.jpg" alt="diploma" class="documents_library_photo">
-              <img src="./image/photo/diploma/photo_2.jpg" alt="diploma" class="documents_library_photo">
+          <img
+            src="./image/leftArrow.svg"
+            onclick="prevProject(this)"
+            alt="left"
+            class="arrow_library"
+          />
+          <div class="wrapper">
+            <div class="gallery">
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/diploma/photo_1.jpg"
+                  alt="diploma"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/diploma/photo_1-2.jpg"
+                  alt="diploma"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/diploma/photo_2.jpg"
+                  alt="diploma"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
             </div>
           </div>
-          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
+          <img
+            src="./image/rightArrow.svg"
+            onclick="nextProject(this)"
+            alt="right"
+            class="arrow_library"
+          />
         </div>
       </div>
       <div id="page_5" class="documents_chapter">
         <input id="certificate" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="certificate" class="documents_chapter_name">
           Сертификаты
-          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
-          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
+          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible"/>
+          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden"/>
         </label>
         <div class="wrapper_library">
-          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
-          <div class="documents_library">
-            <div class="documents_images">
-              <img src="./image/photo/certificate/photo_1.jpg" alt="certificate" class="documents_library_photo">
-              <img src="./image/photo/certificate/photo_2.jpg" alt="certificate" class="documents_library_photo">
-              <img src="./image/photo/certificate/photo_3.jpg" alt="certificate" class="documents_library_photo">
-              <img src="./image/photo/certificate/photo_4.jpg" alt="certificate" class="documents_library_photo">
-              <img src="./image/photo/certificate/photo_5.jpg" alt="certificate" class="documents_library_photo">
-              <img src="./image/photo/certificate/photo_6.jpg" alt="certificate" class="documents_library_photo">
+          <img
+            src="./image/leftArrow.svg"
+            onclick="prevProject(this)"
+            alt="left"
+            class="arrow_library"
+          />
+          <div class="wrapper">
+            <div class="gallery">
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/certificate/photo_1.jpg"
+                  alt="certificate"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/certificate/photo_2.jpg"
+                  alt="certificate"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/certificate/photo_3.jpg"
+                  alt="certificate"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/certificate/photo_4.jpg"
+                  alt="certificate"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/certificate/photo_5.jpg"
+                  alt="certificate"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/certificate/photo_6.jpg"
+                  alt="certificate"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
             </div>
           </div>
-          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
+          <img
+            src="./image/rightArrow.svg"
+            onclick="nextProject(this)"
+            alt="right"
+            class="arrow_library"
+          />
         </div>
       </div>
       <div id="page_6" class="documents_chapter">
         <input id="politic" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="politic" class="documents_chapter_name">
           Политика в области качества
-          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
-          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
+          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible"/>
+          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden"/>
         </label>
         <div class="wrapper_library">
-          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
-          <div class="documents_library">
-            <div class="documents_images">
-              <img src="./image/photo/politic/photo_1.jpg" alt="politic" class="documents_library_photo">
+          <img
+            src="./image/leftArrow.svg"
+            onclick="prevProject(this)"
+            alt="left"
+            class="arrow_library"
+          />
+          <div class="wrapper">
+            <div class="gallery">
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/politic/photo_1.jpg"
+                  alt="politic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
             </div>
           </div>
-          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
+          <img
+            src="./image/rightArrow.svg"
+            onclick="nextProject(this)"
+            alt="right"
+            class="arrow_library"
+          />
         </div>
       </div>
       <div id="page_7" class="documents_chapter">
         <input id="technic" type="checkbox" class="input_checkbox" onclick="openGallery(this)">
         <label for="technic" class="documents_chapter_name">
           Техническая компетенция
-          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible">
-          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden">
+          <img src="./image/Arrow.svg" alt="Arrow" class="documents_arrow visible"/>
+          <img src="./image/openArrow.svg" alt="Arrow" class="documents_arrow hidden"/>
         </label>
         <div class="wrapper_library">
-          <img src="./image/leftArrow.svg" onclick="prevImage(this)" alt="left" class="left arrow_library">
-          <div class="documents_library">
-            <div class="documents_images">
-              <img src="./image/photo/technic/photo_1.jpg" alt="technic" class="documents_library_photo">
-              <img src="./image/photo/technic/photo_2.jpg" alt="technic" class="documents_library_photo">
-              <img src="./image/photo/technic/photo_3.jpg" alt="technic" class="documents_library_photo">
-              <img src="./image/photo/technic/photo_4.jpg" alt="technic" class="documents_library_photo">
-              <img src="./image/photo/technic/photo_5.jpg" alt="technic" class="documents_library_photo">
-              <img src="./image/photo/technic/photo_6.jpg" alt="technic" class="documents_library_photo">
+          <img
+            src="./image/leftArrow.svg"
+            onclick="prevProject(this)"
+            alt="left"
+            class="arrow_library"
+          />
+          <div class="wrapper">
+            <div class="gallery">
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/technic/photo_1.jpg"
+                  alt="technic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/technic/photo_2.jpg"
+                  alt="technic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/technic/photo_3.jpg"
+                  alt="technic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/technic/photo_4.jpg"
+                  alt="technic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/technic/photo_5.jpg"
+                  alt="technic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
+              <div class="wrapper_block">
+                <img
+                  src="./image/photo/technic/photo_6.jpg"
+                  alt="technic"
+                  class="block_photo"
+                  onclick="increaseImage(this)"
+                />
+              </div>
             </div>
           </div>
-          <img src="./image/rightArrow.svg" onclick="nextImage(this)" alt="right" class="right arrow_library">
+          <img
+            src="./image/rightArrow.svg"
+            onclick="nextProject(this)"
+            alt="right"
+            class="arrow_library"
+          />
         </div>
       </div>
     </div>
@@ -329,7 +495,8 @@
         <div id="1" class="review_content review_visible">
           <h3 class="review_title">Конте Инвест</h3>
           <div class="review_text_wrapper">
-            <p class="review_text">Общество с ограниченной ответственностью «Монтера» является нашим партнером в области
+            <p class="review_text">Общество с ограниченной ответственностью «Монтера» является нашим партнером в
+              области
               ремонтно-строительных и монтажных работ на наших
               построенных объектах с момента начала своей деятельности.</p>
             <p class="review_text">За это время ООО «Монтера» показала свою способность с полной
@@ -338,63 +505,112 @@
               являются честность, надежность и исполнительность.</p>
             <p class="review_text">Рекомендуем ООО «Монтера» как стабильногя и делового партнера.</p>
           </div>
-          <img src="./image/photo/review/review_1.jpg" alt="Конте Инвест" class="review_photo">
-          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+          <img
+            src="./image/photo/review/review_1.jpg"
+            alt="Конте Инвест"
+            class="review_photo"
+            onclick="closeReview(event)"
+          />
+          <button
+            class="navigate_button review_button"
+            onclick="reviewIncrease(event)"
+          >
+            Открыть фото
+          </button>
         </div>
 
         <div id="2" class="review_content review_hidden">
           <h3 class="review_title">Биоком</h3>
           <div class="review_text_wrapper">
-            <p class="review_text"> Настоящим письмом ООО «Биоком» хочет выразить благодарность компании ООО «Монтера»,
+            <p class="review_text"> Настоящим письмом ООО «Биоком» хочет выразить благодарность компании ООО
+              «Монтера»,
               являющейся нашем партнером в области строительства и текущего ремонта.</p>
             <p class="review_text">Результаты работ показали, что компания отличается четким выполнением условий
               договора, высоким профессионализмом сотрудников и оперативностью выполнения работ. Все работы успешно
               выполнены.</p>
-            <p class="review_text">Как заказчик, мы удовлетворены качеством проведения и результатами работ, и планируем
+            <p class="review_text">Как заказчик, мы удовлетворены качеством проведения и результатами работ, и
+              планируем
               продолжить сотрудничество на взаимовыгодных условиях.</p>
           </div>
-          <img src="./image/photo/review/review_2.jpg" alt="Биоком" class="review_photo">
-          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+          <img
+            src="./image/photo/review/review_2.jpg"
+            alt="Биоком"
+            class="review_photo"
+            onclick="closeReview(event)"
+          />
+          <button
+            class="navigate_button review_button"
+            onclick="reviewIncrease(event)"
+          >
+            Открыть фото
+          </button>
         </div>
 
         <div id="3" class="review_content review_hidden">
           <h3 class="review_title">Shtang</h3>
           <div class="review_text_wrapper">
-            <p class="review_text">Общество с ограниченной ответственностью «Монтера» в рамках договора строительного
-              субподряда выполняло работы на объекте: «Реконструкция очистных сооружений канализации города Гродно, 2-ая
+            <p class="review_text">Общество с ограниченной ответственностью «Монтера» в рамках договора
+              строительного
+              субподряда выполняло работы на объекте: «Реконструкция очистных сооружений канализации города Гродно,
+              2-ая
               очередь строительства» по адресу: г. Гродно, ул. Биологическая, д.5»</p>
             <p class="review_text">Работы были выполнены в соответствии с действующими строительными нормами и
               правилами, согласно техническому заданию и условиям договора, с надлежащим качеством и в установленный
               срок. При этом, в ходе производства работ максимально учитывались пожелания Заказчика, использовались
               современные строительные материалы и прогрессивные технологии.</p>
             <p class="review_text">За время проведения работ вышеупомянутая организация проявила себя как
-              профессиональный надежный партнер с наличием квалифицированных кадров, решающих оперативно и качественно
+              профессиональный надежный партнер с наличием квалифицированных кадров, решающих оперативно и
+              качественно
               поставленные задачи.</p>
           </div>
-          <img src="./image/photo/review/review_4.jpg" alt="Shtang" class="review_photo">
-          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+          <img
+            src="./image/photo/review/review_4.jpg"
+            alt="Shtang"
+            class="review_photo"
+            onclick="closeReview(event)"
+          />
+          <button
+            class="navigate_button review_button"
+            onclick="reviewIncrease(event)"
+          >
+            Открыть фото
+          </button>
         </div>
 
         <div id="4" class="review_content review_hidden">
           <h3 class="review_title">ВиннерАгро</h3>
           <div class="review_text_wrapper">
-            <p class="review_text">Настоящим рекомендательным письмом хотим отметить успешный опыт сотрудничества ООО
+            <p class="review_text">Настоящим рекомендательным письмом хотим отметить успешный опыт сотрудничества
+              ООО
               ВиннерАгро» с компанией ООО «Монтера», выполняющей строительные работы на территории нашего объекта
-              строительства «Возведение административно-хозяйственного здания с устройством мини-котельной на природном
-              газе с использованием незавершенного законсервированного капитального строения по ул. Гаражная, 15/3 в г.
+              строительства «Возведение административно-хозяйственного здания с устройством мини-котельной на
+              природном
+              газе с использованием незавершенного законсервированного капитального строения по ул. Гаражная, 15/3 в
+              г.
               Гродно» на сегодняшний день.</p>
-            <p class="review_text"> За время сотрудничества компания показала высокий профессионализм и качество работ.
+            <p class="review_text"> За время сотрудничества компания показала высокий профессионализм и качество
+              работ.
               Все работы, выполняемые ООО «Монтера» велись организованно и в намеченные сроки.</p>
             <p class="review_text">Руководство ООО «ВиннерАгро» имеет все основания рекомендовать ООО «Монтера» как
               надежного партнера в области ведения строительных работ.
             </p>
           </div>
-          <img src="./image/photo/review/review_3.jpg" alt="ВиннерАгро" class="review_photo">
-          <button class="navigate_button review_button" onclick="reviewIncrease(event)">Открыть фото</button>
+          <img
+            src="./image/photo/review/review_3.jpg"
+            alt="ВиннерАгро"
+            class="review_photo"
+            onclick="closeReview(event)"
+          />
+          <button
+            class="navigate_button review_button"
+            onclick="reviewIncrease(event)"
+          >
+            Открыть фото
+          </button>
         </div>
       </div>
       <div class="review_wrapper_pages">
-        <img src="./image/”.svg" alt="icon" class="review_icon">
+        <img src="./image/”.svg" alt="icon" class="review_icon"/>
         <div class="review_pages">
           <span class="review_page active_button" onclick="openReview(event)">1</span>
           <span class="review_page" onclick="openReview(event)">2</span>
@@ -412,7 +628,7 @@
     <div class="services_column">
       <div id="work_1" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img1.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img1.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Земляные работы</p>
         </div>
         <div class="services_type_content">
@@ -428,7 +644,7 @@
       </div>
       <div id="work_2" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img5.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img5.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Бетонные работы</p>
         </div>
         <div class="services_type_content">
@@ -441,7 +657,7 @@
       </div>
       <div id="work_3" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img8.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img8.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Каменные работы</p>
         </div>
         <div class="services_type_content">
@@ -454,7 +670,7 @@
     <div class="services_column">
       <div id="work_4" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img2.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img2.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Монтаж конструкций</p>
         </div>
         <div class="services_type_content">
@@ -488,12 +704,13 @@
       </div>
       <div id="work_5" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img6.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img6.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Кровельные работы</p>
         </div>
         <div class="services_type_content">
           <ul class="services_type_ul">
-            <li class="services_type_li">Рулонные и мастичные, из азбествых и цементно-волокнистых волнистых листов, из
+            <li class="services_type_li">Рулонные и мастичные, из азбествых и цементно-волокнистых волнистых листов,
+              из
               мелкоштучных материалов, из листовой стали, металлического профилированного настила, металлочерепицы,
               волнистых и профилированных металлических листов.
             </li>
@@ -502,7 +719,7 @@
       </div>
       <div id="work_6" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img4.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img4.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Отделочные работы</p>
         </div>
         <div class="services_type_content">
@@ -523,7 +740,7 @@
     <div class="services_column">
       <div id="work_7" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img3.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img3.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Благоустройство, озеленение</p>
         </div>
         <div class="services_type_content">
@@ -538,7 +755,7 @@
       </div>
       <div id="work_8" class="services_type" onclick="openClickElement(this)">
         <div class="services_type_header">
-          <img src="./image/img7.svg" alt="icon" class="services_type_icon">
+          <img src="./image/img7.svg" alt="icon" class="services_type_icon"/>
           <p class="services_type_name">Устройство инженерных сетей</p>
         </div>
         <div class="services_type_content">
@@ -563,59 +780,115 @@
   <h2 id="portfolio" class="title">Портфолио</h2>
   <div class="content_slider">
     <div class="portfolio_slider">
-      <img src="./image/leftArrow.svg" onclick="prevProject()" alt="left" class="arrow_library">
-      <div class="portfolio_gallery">
+      <img
+        src="./image/leftArrow.svg"
+        onclick="prevProject(this)"
+        alt="left"
+        class="arrow_library left_arrow"
+      />
+      <div class="wrapper">
+        <div id="slider" class="gallery">
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_9.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Здание многофункциональное</p>
+            <p class="project_inform">Город Гродно, улица Фомичева, 2.</p>
+          </div>
 
-        <div class="project">
-          <img src="image/photo/project/project_9.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Здание многофункциональное</p>
-          <p class="project_inform">Город Гродно, улица Фомичева, 2.</p>
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_11.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Группы жилых домов</p>
+            <p class="project_inform">Микрорайон Барановичи 9, город Гродно.</p>
+          </div>
+
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_10.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Здание многофункциональное</p>
+            <p class="project_inform">Проспект Я.Купалы 72 Б, город Гродно.</p>
+          </div>
+
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_8.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Модернизация здания</p>
+            <p class="project_inform">Город Волковыск, улица Матросава.</p>
+          </div>
+
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_2.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Реконструкция жилого дома</p>
+            <p class="project_inform">Улица Садовая в а/городке Глядовичи.</p>
+          </div>
+
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_7.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Возведение здания</p>
+            <p class="project_inform">Улица Гаражная 15/3.</p>
+          </div>
+
+          <div class="wrapper_block">
+            <img
+              src="image/photo/project/project_4.jpg"
+              alt="photo"
+              class="block_photo"
+              onclick="increaseImage(this)"
+            />
+            <p class="project_name">Склады готовой продукции</p>
+            <p class="project_inform">Территория СЭЗ. “Гродно-Инвест” по улице Аульская в г. Гродно.</p>
+          </div>
         </div>
-
-        <div class="project">
-          <img src="image/photo/project/project_11.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Группы жилых домов</p>
-          <p class="project_inform">Микрорайон Барановичи 9, город Гродно.</p>
-        </div>
-
-        <div class="project">
-          <img src="image/photo/project/project_10.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Здание многофункциональное</p>
-          <p class="project_inform">Проспект Я.Купалы 72 Б, город Гродно.</p>
-        </div>
-
-        <div class="project">
-          <img src="image/photo/project/project_8.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Модернизация здания</p>
-          <p class="project_inform">Город Волковыск, улица Матросава.</p>
-        </div>
-
-        <div class="project">
-          <img src="image/photo/project/project_2.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Реконструкция жилого дома</p>
-          <p class="project_inform">Улица Садовая в а/городке Глядовичи.</p>
-        </div>
-
-        <div class="project">
-          <img src="image/photo/project/project_7.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Возведение здания</p>
-          <p class="project_inform">Улица Гаражная 15/3.</p>
-        </div>
-
-        <div class="project">
-          <img src="image/photo/project/project_4.jpg" alt="photo" class="project_photo">
-          <p class="project_name">Склады готовой продукции</p>
-          <p class="project_inform">Территория СЭЗ. “Гродно-Инвест” по улице Аульская в г. Гродно.</p>
-        </div>
-
       </div>
-      <img src="./image/rightArrow.svg" onclick="nextProject()" alt="right" class="arrow_library">
-
+      <img
+        src="./image/rightArrow.svg"
+        onclick="nextProject(this)"
+        alt="right"
+        class="arrow_library right_arrow"
+      />
     </div>
     <div class="portfolio_gallery_buttons">
-      <span id="btn_minus" class="portfolio_gallery_button active">< Назад</span>
+      <span
+        id="btn_minus"
+        class="portfolio_gallery_button active"
+        onclick="actionSlider(this)"
+      >
+        < Назад
+      </span>
       <span class="space"></span>
-      <span id="btn_plus" class="portfolio_gallery_button active">Вперед ></span>
+      <span
+        id="btn_plus"
+        class="portfolio_gallery_button active"
+        onclick="actionSlider(this)"
+      >
+        Вперед >
+      </span>
     </div>
   </div>
 </div>
@@ -625,38 +898,49 @@
   <div class="contact_inform">
     <div class="contact_inform_column">
       <div class="contact_inform_item">
-        <img src="./image/smallCall.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/smallCall.svg" alt="icon" class="contact_inform_icon"/>
         <a href="tel:+375292749113" class="contact_inform_text">+375(29)274-91-13</a>
       </div>
       <div class="contact_inform_item">
-        <img src="./image/comments_3.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/comments_3.svg" alt="icon" class="contact_inform_icon"/>
         <a href="mailto:ooomontera@mail.ru" class="contact_inform_text">ooomontera@mail.ru</a>
       </div>
     </div>
     <div class="contact_inform_column">
       <div class="contact_inform_item">
-        <img src="./image/build.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/build.svg" alt="icon" class="contact_inform_icon"/>
         <p class="contact_inform_text">Общество с ограниченной ответственностью “Монтера”</p>
       </div>
       <div class="contact_inform_item">
-        <img src="./image/Map_Marker_2.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/Map_Marker_2.svg" alt="icon" class="contact_inform_icon"/>
         <p class="contact_inform_text">230003 РБ, г. Гродно, ул. Куйбышева 74-24/2</p>
       </div>
     </div>
     <div class="contact_inform_column">
       <div class="contact_inform_item">
-        <img src="./image/Document.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/Document.svg" alt="icon" class="contact_inform_icon"/>
         <p class="contact_inform_text">УНП 591039493</p>
       </div>
       <div class="contact_inform_item">
-        <img src="./image/Document.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/Document.svg" alt="icon" class="contact_inform_icon"/>
         <p class="contact_inform_text">Р/С BY51 PJCB 3012 6048 3510 0000 0933</p>
       </div>
       <div class="contact_inform_item">
-        <img src="./image/Document.svg" alt="icon" class="contact_inform_icon">
+        <img src="./image/Document.svg" alt="icon" class="contact_inform_icon"/>
         <p class="contact_inform_text">БИК “ПРИОРБАНК” ОАО ЦБУ№600</p>
       </div>
     </div>
+  </div>
+  <div class="messenger">
+    <a href="tel:+375292749113" class="messenger_link">
+      <img src="./image/Phone.svg" alt="Phone" class="messenger_icon"/>
+    </a>
+    <a href="viber://chat?number=%2B375292749113" class="messenger_link">
+      <img src="./image/Viber.svg" alt="Viber" class="messenger_icon"/>
+    </a>
+    <a href="https://t.me/Kleukin" class="messenger_link">
+      <img src="./image/Telegram.svg" alt="Telegram" class="messenger_icon"/>
+    </a>
   </div>
   <div class="contact_map">
     <iframe
@@ -668,28 +952,11 @@
 <div class="developer">
   Команда разработчиков -<a class="team_name" href="https://www.linkedin.com/company/the-lessoner">The Lessoner</a>
 </div>
-<div class="increase_wrapper_library" onclick="closeWrapper(event)">
-  <img src="./image/leftArrow.svg" alt="left" class="left arrow_library">
-  <div class="increase_documents_library">
-    <div class="increase_documents_images"></div>
-  </div>
-  <img src="./image/rightArrow.svg" alt="right" class="right arrow_library">
-</div>
-<div class="messenger">
-  <a href="tel:+375292749113" class="messenger_link">
-    <img src="./image/Phone.svg" alt="Phone" class="messenger_icon">
-  </a>
-  <a href="viber://chat?number=%2B375292749113" class="messenger_link">
-    <img src="./image/Viber.svg" alt="Viber" class="messenger_icon">
-  </a>
-  <a href="https://t.me/Kleukin" class="messenger_link">
-    <img src="./image/Telegram.svg" alt="Telegram" class="messenger_icon">
-  </a>
-</div>
 
 <script type="text/javascript" src="./script.js"></script>
 <script type="text/javascript" src="./aboutUs.js"></script>
 <script type="text/javascript" src="./service.js"></script>
 <script type="text/javascript" src="./gallery.js"></script>
+
 </body>
 </html>
