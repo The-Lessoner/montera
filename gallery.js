@@ -268,17 +268,22 @@ const increaseImage = (image) => {
     image.className = "increase_image";
     block.className = "increase_wrapper";
     document.body.style.overflow = "hidden";
-  } else {
-    image.parentElement.parentElement.style.display = "flex";
+  }
+};
 
+const decreaseImage = (event) => {
+  const elements = setElement(event.target.parentElement.parentElement.parentElement.children);
+  if (event.target.className === "increase_wrapper") {
+    event.target.parentElement.style.display = "flex";
+    event.target.className = "wrapper_block";
+    document.body.style.overflow = "visible";
     elements.left.className = "arrow_library";
     elements.right.className = "arrow_library";
-    image.className = "block_photo";
-    block.className = "wrapper_block";
-    document.body.style.overflow = "visible";
+    event.target.children[0].className = "block_photo";
+
     let countElement = 0;
-    if (block.parentElement.count) {
-      countElement = block.parentElement.count;
+    if (event.target.parentElement.count) {
+      countElement = event.target.parentElement.count;
     }
     checkArrow(elements.right, elements.left, elements.cards, countElement, 3, false);
   }
@@ -298,3 +303,42 @@ const actionSlider = (button) => {
     }
   }
 };
+
+let startX = null;
+const setCoordinate = (event) => {
+  startX = event.touches[0].screenX;
+};
+
+let moveWay = null;
+
+const handleMove = (event) => {
+  const moveX = event.touches[0].screenX;
+  if (startX - moveX > 0) {
+    moveWay = "right";
+  }
+  if (startX - moveX < 0) {
+    moveWay = "left";
+  }
+};
+
+const handleStop = (event) => {
+  if (moveWay === "right") {
+    const next = event.target.parentElement.parentElement.parentElement.parentElement.lastElementChild;
+    if (next.className.includes("visible_arrow") || next.className.includes("left")) {
+      nextProject(next);
+    }
+  }
+  if (moveWay === "left") {
+    const prev = event.target.parentElement.parentElement.parentElement.parentElement.firstElementChild;
+    if (prev.className.includes("visible_arrow") || prev.className.includes("right")) {
+      prevProject(prev);
+    }
+  }
+  startX = null;
+  moveWay = null;
+};
+
+const slider = document.querySelectorAll(".gallery");
+slider.forEach(block => block.addEventListener("touchstart", setCoordinate, false));
+slider.forEach(block => block.addEventListener("touchmove", handleMove, false));
+slider.forEach(block => block.addEventListener("touchend", handleStop, false));
