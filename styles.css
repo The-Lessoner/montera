@@ -1027,6 +1027,7 @@
   max-width: 95%;
   max-height: 90%;
   animation: 1s linear 0s 1 both show_image;
+  cursor: auto;
 }
 
 @keyframes show_image {

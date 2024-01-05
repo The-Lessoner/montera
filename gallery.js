@@ -292,7 +292,6 @@ const decreaseImage = (event) => {
 const actionSlider = (button) => {
   if (button.className.includes("active")) {
     const slider = document.querySelector(".portfolio_slider").children;
-    console.log(slider)
     for (const arrow of slider) {
       if (arrow.alt === "left" && button.id === "btn_minus") {
         prevProject(arrow);
@@ -305,11 +304,11 @@ const actionSlider = (button) => {
 };
 
 let startX = null;
+let moveWay = null;
+
 const setCoordinate = (event) => {
   startX = event.touches[0].screenX;
 };
-
-let moveWay = null;
 
 const handleMove = (event) => {
   const moveX = event.touches[0].screenX;
