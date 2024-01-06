@@ -35,6 +35,7 @@ const openReview = (event) => {
 const reviewIncrease = (event) => {
   const wrapper = document.createElement("div");
   wrapper.className = "increase_wrapper";
+  wrapper.addEventListener("click", closeReview);
   document.body.appendChild(wrapper);
   const image = event.target.previousElementSibling.cloneNode();
   image.className = "increase_image";
@@ -42,7 +43,9 @@ const reviewIncrease = (event) => {
 };
 
 const closeReview = (event) => {
-  event.target.parentElement.remove();
+  if (event.target.className === "increase_wrapper") {
+    event.target.remove();
+  }
 };
 
 const closeList = (e) => {
