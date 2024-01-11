@@ -352,6 +352,7 @@
   align-items: center;
   padding: 1rem;
   background: #EFEDFF;
+  border-radius: 3px;
 }
 
 .advantages_item:hover > .advantages_wrapper_icon {
@@ -414,6 +415,7 @@
   font-size: 1.5rem;
   text-align: center;
   background: #EFEDFF;
+  border-radius: 3px;
 }
 
 .our_work_container {
@@ -654,6 +656,7 @@
 .wrapper_review {
   background: #F2F2F2;
   box-shadow: 0 4px 10px 0 #6100001A;
+  border-radius: 3px;
 }
 
 .review_content {
@@ -1307,6 +1310,14 @@
   .portfolio {
     padding-block: 6rem;
     gap: 4rem;
+  }
+  
+  .project_name {
+    font-size: 3rem;
+  }
+  
+  .project_inform {
+    font-size: 2rem;
   }
   
   .portfolio_gallery_buttons {
