@@ -7,6 +7,7 @@ let indexImage = 0;
 let startX = null;
 let moveWay = null;
 let pageCards = 3;
+const speed = "300";
 
 const checkArrow = (arrowR, arrowL, cards, count, pageCards, increase) => {
   let hiddenClass, visibleClass, left = null, right = null, buttonLeft, buttonRight;
@@ -166,7 +167,8 @@ const nextProject = (element) => {
           }, {
             transform: `translateX(-${moveLength}px)`,
           }], {
-            duration: 1000,
+            duration: 500,
+            easing: "ease-out",
           });
 
           wrapper.animate([{
@@ -174,7 +176,8 @@ const nextProject = (element) => {
           }, {
             transform: `translateX(${0}px)`,
           }], {
-            duration: 1000,
+            duration: 500,
+            easing: "ease-out",
             fill: "both"
           });
 
@@ -205,7 +208,8 @@ const nextProject = (element) => {
     }, {
       transform: `translateX(-${widthCard * (block.count + 1)}px)`,
     }], {
-      duration: 1000,
+      duration: 500,
+      easing: "ease-out",
       fill: "both"
     });
     block.count += 1;
@@ -240,7 +244,8 @@ const prevProject = (element) => {
           }, {
             transform: `translateX(${moveLength}px)`,
           }], {
-            duration: 1000,
+            duration: 500,
+            easing: "ease-out",
           });
 
           wrapper.animate([{
@@ -248,7 +253,8 @@ const prevProject = (element) => {
           }, {
             transform: `translateX(${0}px)`,
           }], {
-            duration: 1000,
+            duration: 500,
+            easing: "ease-out",
             fill: "both"
           });
 
@@ -278,7 +284,8 @@ const prevProject = (element) => {
     }, {
       transform: `translateX(${widthCard * -(block.count - 1)}px)`,
     }], {
-      duration: 1000,
+      duration: 500,
+      easing: "ease-out",
       fill: "both"
     });
     block.count -= 1;
