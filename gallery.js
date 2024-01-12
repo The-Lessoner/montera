@@ -1,58 +1,82 @@
-const countItems = 3;
-const moveImg = 500;
-const interval = 3000;
-let countImg;
-let widthImg;
-let count = 0;
-let gap = 0;
-let clickElement;
-let leftArrow;
-let rightArrow;
-const next = document.getElementById("btn_plus");
-const previous = document.getElementById("btn_minus");
-const widthImageGallery = (document.querySelector(".portfolio_gallery").offsetWidth) / countItems;
-const allPortfolio = document.querySelectorAll(".project_photo");
-allPortfolio.forEach(image => image.addEventListener("click", (e) => increaseImg(e.target, true)));
+const cards = document.getElementById("slider").children.length;
+const arrowLeft = document.querySelector(".left_arrow");
+const arrowRight = document.querySelector(".right_arrow");
+let countImage = 0;
+let mark = true;
+let indexImage = 0;
+let startX = null;
+let moveWay = null;
+let pageCards = 3;
 
-const chooseWidth = () => {
-  const field = document.querySelectorAll(".documents_library");
-  let fieldWidth;
-  field.forEach(item => {
-    if (item.offsetWidth) {
-      fieldWidth = item.offsetWidth;
+const checkArrow = (arrowR, arrowL, cards, count, pageCards, increase) => {
+  let hiddenClass, visibleClass, left = null, right = null, buttonLeft, buttonRight;
+
+  if (arrowLeft.parentElement.className === "portfolio_slider") {
+    buttonRight = document.getElementById("btn_minus");
+    buttonLeft = document.getElementById("btn_plus");
+  }
+
+  if (increase) {
+    hiddenClass = "arrow_library";
+    visibleClass = "arrow_library";
+    left = "left";
+    right = "right";
+  } else {
+    hiddenClass = "arrow_library";
+    visibleClass = "visible_arrow arrow_library";
+  }
+  if (count <= 0) {
+    arrowL.className = hiddenClass;
+    if (buttonRight) {
+      buttonRight.className = "portfolio_gallery_button";
     }
-  });
-  const images = document.querySelectorAll(".documents_library_photo");
-  images.forEach(img => {
-    widthImg = (fieldWidth - 60) / countItems;
-    img.style.width = widthImg + "px";
-    img.style.height = widthImg * 1.4 + "px";
-  });
+  } else {
+    arrowL.className = visibleClass + " " + right;
+    if (buttonRight) {
+      buttonRight.className = "portfolio_gallery_button active";
+    }
+  }
+  if (count >= cards - pageCards) {
+    arrowR.className = hiddenClass;
+    if (buttonLeft) {
+      buttonLeft.className = "portfolio_gallery_button";
+    }
+  } else {
+    arrowR.className = visibleClass + " " + left;
+    if (buttonLeft) {
+      buttonLeft.className = "portfolio_gallery_button active";
+    }
+  }
 };
 
-document.querySelectorAll(".documents_library_photo").forEach(img => {
-  img.addEventListener("click", (e) => increaseImg(e.target, false), {passive: true});
-});
+const resizeDisplay = () => {
+  const displayWidth = window.innerWidth;
+  if (displayWidth <= 440) {
+    pageCards = 1;
+  } else {
+    pageCards = 3;
+  }
+};
 
 window.addEventListener("resize", () => {
-  chooseWidth()
+  resizeDisplay();
 }, {passive: true});
 
 const openGallery = (element) => {
-  chooseWidth();
-  const id = element.id;
-  const imgArray = document.querySelectorAll(`img[alt=${id}]`);
-  countImg = imgArray.length;
-  const item = element.parentElement.children;
-  for (const key in item) {
-    if (item[key].className === "wrapper_library") {
+  const img = document.querySelector(".block_photo");
+  const imgHeight = img.getBoundingClientRect().height;
+  const block = element.parentElement.children;
+  for (const key in block) {
+    if (block[key].className === "wrapper_library") {
+      const slider = setElement(block[key].children);
+      checkArrow(slider.right, slider.left, slider.cards, 0, pageCards);
       if (element.checked) {
-        item[key].animate([
+        block[key].animate([
             {
               height: "0",
             },
             {
-              height: `${widthImg * 1.4 + +60 + "px"}`,
+              height: `${imgHeight + 50 + "px"}`,
               visibility: "visible",
             }
           ],
@@ -64,9 +88,9 @@ const openGallery = (element) => {
           }
         );
       } else {
-        item[key].animate([
+        block[key].animate([
             {
-              height: `${widthImg * 1.4 + "px"}`,
+              height: `${imgHeight + 50 + "px"}`,
               visibility: "visible",
             },
             {
@@ -80,410 +104,301 @@ const openGallery = (element) => {
           }
         );
       }
-      if (countImg <= countItems) {
-        const gallery = item[key].children;
-        for (let child in gallery) {
-          if (gallery[child].tagName === "IMG") {
-            gallery[child].style.visibility = "hidden";
-          }
+    }
+  }
+};
+
+const setElement = (children) => {
+  const gallery = {};
+  for (const child of children) {
+    if (child.alt === "left") {
+      gallery.left = child;
+    }
+    if (child.alt === "right") {
+      gallery.right = child;
+    }
+    if (child.className === "wrapper") {
+      for (const wrapper of child.children) {
+        if (wrapper.className === "gallery") {
+          gallery.card = wrapper.children[0];
+          gallery.cards = wrapper.children.length;
         }
       }
     }
   }
+  return gallery;
 };
 
-const checkArrow = (element) => {
-  const children = element.parentElement.children;
-  let leftArray;
-  let rightArray;
-  for (const key in children) {
-    if (children[key].className === "left arrow_library") {
-      leftArray = children[key];
-    }
-    if (children[key].className === "right arrow_library") {
-      rightArray = children[key];
-    }
-  }
-  if (count + countItems >= countImg) {
-    rightArray.style.visibility = "hidden";
-  } else {
-    rightArray.style.visibility = "visible";
-  }
-  if (count === 0) {
-    leftArray.style.visibility = "hidden";
-  } else {
-    leftArray.style.visibility = "visible";
-  }
-};
-
-const nextImage = (element) => {
-  const gallery = element.previousElementSibling.children[0];
-  count++;
-  gap += 30;
-  checkArrow(element);
-  rollLibrary(gallery);
-};
-
-const prevImage = (element) => {
-  const gallery = element.nextElementSibling.children[0];
-  count--;
-  gap -= 30;
-  checkArrow(element);
-  rollLibrary(gallery);
-};
-
-const rollLibrary = (element) => {
-  element.style.transform = "translate(-" + (widthImg * count + gap) + "px)";
-};
-
-const increaseImg = (element, portfolio) => {
-  clickElement = element;
-  const wrapper = document.querySelector(".increase_wrapper_library");
-  wrapper.className = "increase_wrapper_library open_slider";
-  document.body.style.overflow = "hidden";
-  for (const key in wrapper.children) {
-    if (wrapper.children[key].alt === "left") {
-      leftArrow = wrapper.children[key];
-    }
-    if (wrapper.children[key].alt === "right") {
-      rightArrow = wrapper.children[key];
-    }
-  }
-  addImg(clickElement, portfolio);
-
-  if (portfolio) {
-    leftArrow.addEventListener("click", prevImagePortfolio, {passive: true});
-    rightArrow.addEventListener("click", nextImagePortfolio, {passive: true});
-    rightArrow.style.visibility = "visible";
-    leftArrow.style.visibility = "visible";
-  } else {
-    leftArrow.addEventListener("click", prevImg, {passive: true});
-    rightArrow.addEventListener("click", nextImg, {passive: true});
-  }
-};
-
-const addImg = (element, left, portfolio) => {
-  let start, finish;
-  if (left) {
-    start = moveImg;
-    finish = -moveImg;
-  } else {
-    start = -moveImg;
-    finish = moveImg;
-  }
-  const image = document.createElement("img");
-  image.src = element.src;
-  image.className = "increase_documents_library_photo";
-  const gallery = document.querySelector(".increase_documents_images");
-  if (!gallery.childNodes.length) {
-    gallery.innerHTML = `<img src =${element.src} alt="photo" class="increase_documents_library_photo" />`;
-  } else {
-    image.animate([
-      {
-        transform: `translateX(${start}px)`,
-        opacity: "0",
-      },
-      {
-        opacity: "1",
-      }
-    ], {
-      duration: interval / 4,
-      fill: "both",
-      delay: "1000"
-    });
-    gallery.appendChild(image)
-
-    gallery.childNodes[0].animate([
-      {
-        opacity: "1",
-      },
-      {
-        opacity: "0",
-        transform: `translateX(${finish}px)`,
-      }
-    ], {
-      duration: interval / 4,
-      fill: "both",
-    });
-    setTimeout(() => gallery.removeChild(gallery.firstElementChild), interval / 4);
-  }
-
-  if (!portfolio) {
-    checkIncreaseArrow(element);
-  }
-};
-
-const nextImg = () => {
-  clickElement = clickElement.nextElementSibling;
-  addImg(clickElement, true);
-};
-
-const prevImg = () => {
-  clickElement = clickElement.previousElementSibling;
-  addImg(clickElement, false);
-};
-
-const checkIncreaseArrow = (element) => {
-  if (!element.nextElementSibling) {
-    rightArrow.style.visibility = "hidden";
-  } else {
-    rightArrow.style.visibility = "visible";
-  }
-  if (!element.previousElementSibling) {
-    leftArrow.style.visibility = "hidden";
-  } else {
-    leftArrow.style.visibility = "visible";
-  }
-};
-
-const closeWrapper = (event) => {
-  if (event.target.className === "increase_wrapper_library open_slider") {
-    event.target.className = "increase_wrapper_library close_slider";
-    document.body.style.overflow = "visible";
-    document.querySelector(".increase_documents_images").innerHTML = "";
-  }
-};
-
-const nextImagePortfolio = () => {
-  let parent = clickElement.parentElement.nextElementSibling;
-  const children = clickElement.parentElement.parentElement.children;
-  if (!parent) {
-    parent = children[1];
-  }
-  for (const key in parent.children) {
-    if (parent.children[key].tagName === "IMG") {
-      clickElement = parent.children[key];
-    }
-  }
-  addImg(clickElement, true, true);
-};
-
-const prevImagePortfolio = () => {
-  let parent = clickElement.parentElement.previousElementSibling;
-  const children = clickElement.parentElement.parentElement.children;
-  if (!parent) {
-    parent = children[children.length - 1];
-  }
-  for (const key in parent.children) {
-    if (parent.children[key].tagName === "IMG") {
-      clickElement = parent.children[key];
-    }
-  }
-  addImg(clickElement, false, true);
-};
-
-const setParamImg = () => {
-  const allPhotos = document.querySelectorAll(".project_photo");
-  for (let i = 0; i < allPhotos.length; i++) {
-    if (i === 0) {
-      allPhotos[i].style.width = widthImageGallery + "px";
-      allPhotos[i].style.height = widthImageGallery * 1.2 + "px";
+const checkShadow = (elements, count) => {
+  for (let i = 0; i < elements.length; i++) {
+    if (i === count) {
+      elements[i].style.background = "rgb(140 136 136)";
     } else {
-      allPhotos[i].style.width = widthImageGallery * 0.8 + "px";
-      allPhotos[i].style.height = widthImageGallery * 0.8 * 1.2 + "px";
+      elements[i].style.background = "lightgrey";
     }
   }
 };
 
-window.addEventListener("load", setParamImg, {passive: true});
-window.addEventListener("resize", setParamImg, {passive: true});
+const nextProject = (element) => {
+  const children = element.parentElement.children;
+  const slider = setElement(children);
 
-const animateNext = () => {
-  const allPhotos = document.querySelectorAll(".project_photo");
-  for (let i = 0; i < allPhotos.length; i++) {
-
-    allPhotos[i].parentElement.animate([
-      {
-        transform: `translateX(0px)`,
-      },
-      {
-        transform: `translateX(-${widthImageGallery + 30}px)`,
+  const elementClass = element.className.split(" ");
+  if (elementClass.includes("left")) {
+    if (mark) {
+      mark = false;
+      const block = element.previousElementSibling.children;
+      for (const gallery of block) {
+      if (gallery.className.includes("increase_block_shadow")){
+        checkShadow(gallery.children,countImage+1);
       }
-    ], {
-      duration: interval,
+        if (gallery.className === "gallery") {
+          const wrapper = gallery.children[countImage + 1];
+          const image = wrapper.children[0];
+          const classImage = image.className;
+          const classWrapper = wrapper.className;
+          wrapper.className = "increase_wrapper";
+          image.className = "increase_image";
+          const moveLength = wrapper.getBoundingClientRect().width;
+
+          gallery.children[countImage].animate([{
+            transform: `translateX(${0}px)`,
+          }, {
+            transform: `translateX(-${moveLength}px)`,
+          }], {
+            duration: 1000,
+          });
+
+          wrapper.animate([{
+            transform: `translateX(${moveLength}px)`,
+          }, {
+            transform: `translateX(${0}px)`,
+          }], {
+            duration: 1000,
+            fill: "both"
+          });
+
+          Promise.all(
+            gallery.children[countImage].getAnimations({subtree: true}).map((animation) => animation.finished),
+          ).then(() => {
+            pageCards = 1;
+            gallery.children[countImage].className = classWrapper;
+            gallery.children[countImage].children[0].className = classImage;
+            countImage += 1;
+            checkArrow(slider.right, slider.left, slider.cards, countImage, pageCards, true);
+            mark = true;
+          });
+        }
+      }
+    }
+  } else {
+    const widthCard = slider.card.getBoundingClientRect().width;
+    const block = slider.card.parentElement;
+    const shadow = block.nextElementSibling.children;
+
+    if (!block.count) {
+      block.count = 0;
+    }
+    checkShadow(shadow, block.count + 1);
+    block.animate([{
+      transform: `translateX(-${widthCard * block.count}px)`,
+    }, {
+      transform: `translateX(-${widthCard * (block.count + 1)}px)`,
+    }], {
+      duration: 1000,
       fill: "both"
     });
-    if (i === 0) {
-      allPhotos[i].style.width = `${widthImageGallery}px`;
-      allPhotos[i].style.height = `${widthImageGallery * 1.2}px`;
-      allPhotos[i].parentElement.animate([
-        {
-          opacity: "1",
-        },
-        {
-          opacity: "0",
-        }
-      ], {
-        duration: interval,
-      });
-    }
-    if (i === 1) {
-      allPhotos[i].animate([
-        {
-          width: `${widthImageGallery * 0.8}px`,
-          height: `${widthImageGallery * 0.8 * 1.2}px`,
-        },
-        {
-          width: `${widthImageGallery}px`,
-          height: `${widthImageGallery * 1.2}px`,
-        }
-      ], {
-        duration: interval,
-        fill: "both"
-      });
-    }
-    if (i === 3) {
-      allPhotos[i].animate([
-        {
-          width: `${widthImageGallery}px`,
-          height: `${widthImageGallery * 1.2}px`,
-        },
-        {
-          width: `${widthImageGallery * 0.8}px`,
-          height: `${widthImageGallery * 0.8 * 1.2}px`,
-        }
-      ], {
-        duration: interval,
-        fill: "both"
-      });
-      allPhotos[i].parentElement.animate([
-        {
-          opacity: "0",
-        },
-        {
-          opacity: "1",
-        }
-      ], {
-        duration: interval,
-      });
-    }
+    block.count += 1;
+    checkArrow(slider.right, slider.left, slider.cards, block.count, pageCards);
   }
 };
-animateNext();
 
-const animateBack = () => {
-  const allPhotos = document.querySelectorAll(".project_photo");
+const prevProject = (element) => {
+  const children = element.parentElement.children;
+  const slider = setElement(children);
 
-  for (let i = 0; i < allPhotos.length; i++) {
-    allPhotos[i].parentElement.animate([
-      {
-        left: `-${widthImageGallery + 30}px`,
-      },
-      {
-        left: `0`,
+  const elementClass = element.className.split(" ");
+  if (elementClass.includes("right")) {
+    if (mark) {
+      mark = false;
+      const container = element.nextElementSibling.children;
+      for (const gallery of container) {
+        if (gallery.className.includes("increase_block_shadow")){
+          checkShadow(gallery.children,countImage-1);
+        }
+        if (gallery.className === "gallery") {
+          const wrapper = gallery.children[countImage - 1];
+          const image = wrapper.children[0];
+          const classImage = image.className;
+          const classWrapper = wrapper.className;
+          wrapper.className = "increase_wrapper";
+          image.className = "increase_image";
+          const moveLength = wrapper.getBoundingClientRect().width;
+
+          gallery.children[countImage].animate([{
+            transform: `translateX(${0}px)`,
+          }, {
+            transform: `translateX(${moveLength}px)`,
+          }], {
+            duration: 1000,
+          });
+
+          wrapper.animate([{
+            transform: `translateX(-${moveLength}px)`,
+          }, {
+            transform: `translateX(${0}px)`,
+          }], {
+            duration: 1000,
+            fill: "both"
+          });
+
+          Promise.all(
+            gallery.children[countImage].getAnimations({subtree: true}).map((animation) => animation.finished),
+          ).then(() => {
+            pageCards = 1;
+            gallery.children[countImage].className = classWrapper;
+            gallery.children[countImage].children[0].className = classImage;
+            countImage -= 1;
+            checkArrow(slider.right, slider.left, slider.cards, countImage, pageCards, true);
+            mark = true;
+          });
+        }
       }
-    ], {
-      duration: interval,
+    }
+  } else {
+    const widthCard = slider.card.getBoundingClientRect().width;
+    const block = slider.card.parentElement;
+    const shadow = block.nextElementSibling.children;
+    if (!block.count) {
+      block.count = 0;
+    }
+    checkShadow(shadow, block.count - 1);
+    block.animate([{
+      transform: `translateX(${widthCard * -block.count}px)`,
+    }, {
+      transform: `translateX(${widthCard * -(block.count - 1)}px)`,
+    }], {
+      duration: 1000,
+      fill: "both"
     });
-    if (i === 0) {
-      allPhotos[i].animate([
-        {
-          // opacity: "1",
-          width: `${widthImageGallery}px`,
-          height: `${widthImageGallery * 1.2}px`
-        },
-        {
-          // opacity: "1",
-          width: `${widthImageGallery}px`,
-          height: `${widthImageGallery * 1.2}px`
-        }
-      ], {
-        duration: interval,
-        fill: "both"
-      });
-    }
-    if (i === 1) {
-      allPhotos[i].animate([
-        {
-          opacity: "0",
-        },
-        {
-          opacity: "1",
-        }
-      ], {
-        duration: interval,
-        // fill: "both"
+    block.count -= 1;
+    checkArrow(slider.right, slider.left, slider.cards, block.count, pageCards);
+  }
+};
 
-      });
+const increaseImage = (image) => {
+  pageCards = 1;
+  const block = image.parentElement;
+  const gallery = image.parentElement.parentElement;
+  gallery.style.display = "contents";
+  const elements = setElement(gallery.parentElement.parentElement.children);
+  if (block.className === "wrapper_block") {
+    const children = gallery.children;
+    let count = 0;
+    for (const key of children) {
+      if (key === block) {
+        indexImage = count;
+        countImage = count;
+        checkArrow(elements.right, elements.left, elements.cards, countImage, pageCards, true);
+      }
+      count += 1;
     }
-    if (i === 2) {
-      allPhotos[i].animate([
-        {
-          width: `${widthImageGallery}px`,
-          height: `${widthImageGallery * 1.2}px`,
-        },
-        {
-          width: `${widthImageGallery * 0.8}px`,
-          height: `${widthImageGallery * 0.8 * 1.2}px`,
-        }
-      ], {
-        duration: interval,
-        fill: "both"
-      });
-    }
-    if (i === 4) {
-      allPhotos[i].parentElement.animate([
-        {
-          opacity: "1",
+    gallery.nextElementSibling.className = "increase_block_shadow block_shadow"
+    image.className = "increase_image";
+    block.className = "increase_wrapper";
+    document.body.style.overflow = "hidden";
+  }
+};
 
-        },
-        {
-          opacity: "0",
-        }
-      ], {
-        duration: interval,
-        // fill: "both"
-      });
-      allPhotos[i].animate([
-        {
-          width: `${widthImageGallery * 0.8}px`,
-          height: `${widthImageGallery * 0.8 * 1.2}px`,
-        },
-        {
-          width: `${widthImageGallery}px`,
-          height: `${widthImageGallery * 1.2}px`,
-        }
-      ], {
-        duration: interval,
-        // fill: "both"
-      });
+const decreaseImage = (event) => {
+  const gallery = event.target.parentElement;
+  const elements = setElement(gallery.parentElement.parentElement.children);
+  if (event.target.className === "increase_wrapper") {
+    gallery.style.display = "flex";
+    event.target.className = "wrapper_block";
+    document.body.style.overflow = "visible";
+    elements.left.className = "arrow_library";
+    elements.right.className = "arrow_library";
+    event.target.children[0].className = "block_photo";
+    gallery.nextElementSibling.className = "block_shadow";
+    let countElement = 0;
+    if (gallery.count) {
+      countElement = gallery.count;
+    }
+    if(!gallery.count){
+      gallery.count = 0;
+    }
+    checkShadow(gallery.nextElementSibling.children,gallery.count);
+    checkArrow(elements.right, elements.left, elements.cards, countElement, pageCards, false);
+  }
+};
+
+const actionSlider = (button) => {
+  if (button.className.includes("active")) {
+    const slider = document.querySelector(".portfolio_slider").children;
+    for (const arrow of slider) {
+      if (arrow.alt === "left" && button.id === "btn_minus") {
+        prevProject(arrow);
+      }
+      if (arrow.alt === "right" && button.id === "btn_plus") {
+        nextProject(arrow);
+      }
     }
   }
 };
 
-const nextProject = () => {
-  const parent = document.querySelector(".portfolio_gallery");
-  const first = parent.firstElementChild;
-  // first.style.width = `${widthImageGallery * 0.8}px`;
-  // first.style.height = `${widthImageGallery * 1.2 * 0.8}px`;
-  setTimeout(() => {
-    parent.removeChild(first);
-    parent.appendChild(first);
-    animateNext();
-  }, 0);
+const setCoordinate = (event) => {
+  startX = event.touches[0].screenX;
 };
 
-const prevProject = () => {
-  const parent = document.querySelector(".portfolio_gallery");
-  const last = parent.lastElementChild;
-
-  setTimeout(() => {
-    parent.removeChild(last);
-    parent.insertBefore(last, parent.firstElementChild);
-    animateBack();
-  }, 0);
+const handleMove = (event) => {
+  const moveX = event.touches[0].screenX;
+  if (startX - moveX > 0) {
+    moveWay = "right";
+  }
+  if (startX - moveX < 0) {
+    moveWay = "left";
+  }
 };
 
-next.addEventListener("click", nextProject, {passive: true});
-previous.addEventListener("click", prevProject, {passive: true});
+const handleStop = (event) => {
+  if (moveWay === "right") {
+    const next = event.target.parentElement.parentElement.parentElement.parentElement.lastElementChild;
+    if (next.className.includes("visible_arrow") || next.className.includes("left")) {
+      nextProject(next);
+    }
+  }
+  if (moveWay === "left") {
+    const prev = event.target.parentElement.parentElement.parentElement.parentElement.firstElementChild;
+    if (prev.className.includes("visible_arrow") || prev.className.includes("right")) {
+      prevProject(prev);
+    }
+  }
+  startX = null;
+  moveWay = null;
+};
 
-// const portfolio = document.querySelector(".content_slider");
-// let moveSlider = setInterval(nextProject, interval);
+const slider = document.querySelectorAll(".gallery");
+slider.forEach(block => block.addEventListener("touchstart", setCoordinate, false));
+slider.forEach(block => block.addEventListener("touchmove", handleMove, false));
+slider.forEach(block => block.addEventListener("touchend", handleStop, false));
 
-// portfolio.addEventListener("mouseenter", () => {
-//   clearInterval(moveSlider);
-// });
-//
-// portfolio.addEventListener("mouseleave", () => {
-//   setTimeout(() => moveSlider = setInterval(nextProject, interval), 0);
-// });
+const startWork = () => {
+  checkArrow(arrowRight, arrowLeft, cards, 0, pageCards);
+  resizeDisplay();
+  const gallery = document.querySelectorAll(".gallery");
+
+  gallery.forEach(block => {
+    const blockShadow = document.createElement("div");
+    blockShadow.className = "block_shadow";
+
+    const childrenBlock = block.childElementCount;
+    block.parentElement.appendChild(blockShadow);
+    for (let i = 0; i < childrenBlock; i++) {
+      const shadow = document.createElement("span");
+      shadow.className = "shadow";
+      blockShadow.appendChild(shadow);
+    }
+  });
+};
+startWork();
